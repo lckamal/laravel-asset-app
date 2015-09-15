@@ -408,10 +408,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/Exceptions/RoleDeniedException.php",
+			"file": "app/Http/Controllers/UsersController.php",
 			"settings":
 			{
-				"buffer_size": 329,
+				"buffer_size": 2766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/User.php",
+			"settings":
+			{
+				"buffer_size": 1839,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/Auth/AuthController.php",
+			"settings":
+			{
+				"buffer_size": 1777,
 				"line_ending": "Unix"
 			}
 		}
@@ -533,10 +549,17 @@
 	"expanded_folders":
 	[
 		"/Users/apple/Sites/college/akproject",
-		"/Users/apple/Sites/college/akproject/app"
+		"/Users/apple/Sites/college/akproject/app",
+		"/Users/apple/Sites/college/akproject/database/factories"
 	],
 	"file_history":
 	[
+		"/Users/apple/Sites/college/akproject/tests/AuthenticationTest.php",
+		"/Users/apple/Sites/college/akproject/tests/TestCase.php",
+		"/Users/apple/Sites/college/akproject/tests/UsersTest.php",
+		"/Users/apple/Sites/college/akproject/app/User.php",
+		"/Users/apple/Sites/college/akproject/database/factories/ModelFactory.php",
+		"/Users/apple/Sites/college/akproject/.gitignore",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/Handler.php",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/PermissionDeniedException.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/UsersController.php",
@@ -561,12 +584,8 @@
 		"/Users/apple/Sites/college/akproject/app/Http/Requests/UserRequest.php",
 		"/Users/apple/Sites/college/akproject/app/Role.php",
 		"/Users/apple/Sites/college/akproject/app/Providers/AuthServiceProvider.php",
-		"/Users/apple/Sites/college/akproject/app/User.php",
 		"/Users/apple/.ssh/id_rsa.pub",
-		"/Users/apple/Sites/college/akproject/tests/TestCase.php",
 		"/Users/apple/Sites/college/akproject/tests/ExampleTest.php",
-		"/Users/apple/Sites/college/akproject/tests/AuthenticationTest.php",
-		"/Users/apple/Sites/college/akproject/tests/UsersTest.php",
 		"/Users/apple/Sites/college/akproject/.env",
 		"/Users/apple/Sites/college/akproject/database/seeds/DatabaseSeeder.php",
 		"/Users/apple/Sites/college/akproject/database/seeds/UserTableSeeder.php",
@@ -597,7 +616,6 @@
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/DepartmentController.php",
 		"/Users/apple/Sites/project-flyer/resources/views/flyers/index.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/Controller.php",
-		"/Users/apple/Sites/college/akproject/database/factories/ModelFactory.php",
 		"/Users/apple/Sites/college/akproject/app/Company.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_000000_create_company_table.php",
 		"/Users/apple/Sites/college/akproject/resources/views/auth/register.blade.php",
@@ -663,8 +681,7 @@
 		"/Users/apple/Sites/project-flyer/resources/views/layout.blade.php",
 		"/Users/apple/Sites/project-flyer/.env",
 		"/Users/apple/Sites/project-flyer/app/Http/Controllers/FlyControllers.php",
-		"/Users/apple/Sites/project-flyer/tests/FlyersControllerTest.php",
-		"/Users/apple/Sites/gogulf/viessmann/xhtml/css/contact-style.css"
+		"/Users/apple/Sites/project-flyer/tests/FlyersControllerTest.php"
 	],
 	"find":
 	{
@@ -847,24 +864,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Exceptions/RoleDeniedException.php",
-					"semi_transient": true,
+					"file": "app/Http/Controllers/UsersController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 329,
+						"buffer_size": 2766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1986,
+								1986
 							]
 						],
 						"settings":
@@ -872,6 +889,16 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -882,59 +909,224 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content"
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/User.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1454,
+								1454
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 980.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/Controllers/Auth/AuthController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1730,
+								1737
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 953.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -993,16 +1185,24 @@
 		"selected_items":
 		[
 			[
+				"userscont",
+				"app/Http/Controllers/UsersController.php"
+			],
+			[
+				"user",
+				"app/User.php"
+			],
+			[
+				"authcon",
+				"app/Http/Controllers/Auth/AuthController.php"
+			],
+			[
 				"lay",
 				"resources/views/layout.blade.php"
 			],
 			[
 				"rou",
 				"app/Http/routes.php"
-			],
-			[
-				"user",
-				"app/User.php"
 			],
 			[
 				"role",
@@ -1087,10 +1287,6 @@
 			[
 				"hasro",
 				"app/HasRoles.php"
-			],
-			[
-				"userscont",
-				"app/Http/Controllers/UsersController.php"
 			],
 			[
 				"users/for",
@@ -1406,9 +1602,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "apos",
+		"last_filter": "proj",
 		"selected_items":
 		[
+			[
+				"proj",
+				"~/Sites/project-flyer/projectflyer.sublime-project"
+			],
 			[
 				"apos",
 				"~/Sites/gogulf/aposource/aposource.sublime-project"
@@ -1427,10 +1627,6 @@
 			],
 			[
 				"flyer",
-				"~/Sites/project-flyer/projectflyer.sublime-project"
-			],
-			[
-				"proj",
 				"~/Sites/project-flyer/projectflyer.sublime-project"
 			],
 			[

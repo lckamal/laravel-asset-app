@@ -48,6 +48,12 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsTo('App\Department');
     }
 
+    public function setPasswordAttribute($password)
+    {
+        if(empty($password)) return false;
+
+        $this->attributes['password'] = bcrypt($password);
+    }
     /**
      * Get role ids lists associated with the given user
      * 
