@@ -36,9 +36,28 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <!-- <ul class="nav navbar-nav">
-                    <li><a href="/flyers">Flyers</a></li>
-                </ul> -->
+            <ul class="nav navbar-nav">
+                @can('manage_departments')
+                    <li><a href="/departments">Departments</a></li>
+                @endcan
+                @can('manage_assets')
+                    <li><a href="/assets">Assets</a></li>
+                @endcan
+                @can('manage_users')
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users">Users</a></li>
+                        @can('manage_roles')
+                            <li><a href="/roles">Roles</a></li>
+                        @endcan
+                        @can('manage_permissions')
+                            <li><a href="/permissions">Permissions</a></li>
+                        @endcan
+                    </ul>
+                </li>
+                @endcan
+            </ul>
             
             <ul class="nav navbar-nav navbar-right">
             @if (Auth::check())
@@ -46,21 +65,6 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome! {{ Auth::user()->name }} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    @can('manage_departments')
-                        <li><a href="/departments">Departments</a></li>
-                    @endcan
-                    @can('manage_assets')
-                        <li><a href="/assets">Assets</a></li>
-                    @endcan
-                    @can('manage_users')
-                        <li><a href="/users">Users</a></li>
-                    @endcan
-                    @can('manage_roles')
-                        <li><a href="/roles">Roles</a></li>
-                    @endcan
-                    @can('manage_permissions')
-                        <li><a href="/permissions">Permissions</a></li>
-                    @endcan
                     <li><a href="/auth/logout">Logout</a></li>
                 </ul>
             </li>
