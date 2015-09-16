@@ -49,7 +49,8 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:roles|max:255'
+            'name' => 'required|unique:roles|max:255',
+            'label' => 'required|unique:roles|max:255',
         ]);
 
         $role = new Role;
@@ -96,7 +97,8 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|unique:roles,id,'.$id.'|max:255'
+            'name' => 'required|unique:roles,id,'.$id.'|max:255',
+            'label' => 'required|unique:roles,id,'.$id.'|max:255',
         ]);
 
         $role = Role::findOrFail($id);

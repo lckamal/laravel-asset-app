@@ -20,27 +20,27 @@
         @endif
         <div class="box-body">
             <div class="form-group">
-                {!! Form::label('name', 'Name:') !!}
+                {!! Form::label('name', 'Name:') !!} <span class="text-danger">*</span>
                 {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('email', 'Email:') !!}
+                {!! Form::label('email', 'Email:') !!} <span class="text-danger">*</span>
                 {!! Form::text('email', old('email'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('password', 'Password:') !!}
+                {!! Form::label('password', 'Password:') !!} <span class="text-danger">*</span>
                 {!! Form::password('password', ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('password_confirmation', 'Confirm Password:') !!}
+                {!! Form::label('password_confirmation', 'Confirm Password:') !!} <span class="text-danger">*</span>
                 {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
             </div>
             
             <div class="form-group">
-                {!! Form::label('department_id', 'Department:') !!}
+                {!! Form::label('department_id', 'Department:') !!} <span class="text-danger">*</span>
                 {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('department_name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
             </div>
 
@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('status', 'Status:') !!}
+                {!! Form::label('status', 'Status:') !!} <span class="text-danger">*</span>
                 {!! Form::select('status', array('1' => 'Active', '0' => 'Inactive'), null, ['class' => 'form-control chosen-input']) !!}
             </div>
 

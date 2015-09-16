@@ -48,13 +48,8 @@ class EmployeesController extends Controller
      */
     public function store(EmployeeRequest $request)
     {
-        $this->validate($request, [
-            'employee_name' => 'required|unique:employees|max:255'
-        ]);
-
-        $dept = new Employee;
-        $dept->employee_name = $request->employee_name;
-        $dept->save();
+        $employee = new Employee($request->all());
+        $employee->save();
 
         flash()->success('Success!', 'Employee created successfully');
 
@@ -92,16 +87,12 @@ class EmployeesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(EmployeeRequest $request, $id)
     {
-        $this->validate($request, [
-            'employee_name' => 'required|unique:employees,id,'.$id.'|max:255'
-        ]);
-
         $employee = Employee::findOrFail($id);
         $employee->update($request->all());
         
-        flash()->success('Success!', 'Departmanet name updated!');
+        flash()->success('Success!', 'Employee details saved successfully!');
         return redirect('employees');
     }
 

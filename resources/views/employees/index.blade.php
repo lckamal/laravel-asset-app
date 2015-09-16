@@ -20,6 +20,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Number</th>
                         <th>SSN</th>
                         <th></th>
@@ -30,6 +31,8 @@
                         <tr>
                             <td>{{ $employee->id }}</td>
                             <td>{{ $employee->first_name . ' ' . $employee->last_name }}</td>
+                            <td>{{ $employee->email }}</td>
+                            <td>{{ $employee->mobile }}</td>
                             <td>{{ $employee->ssn }}</td>
                             <td>
                                 <a href="/employees/{{ $employee->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>

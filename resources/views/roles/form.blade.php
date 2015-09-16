@@ -19,12 +19,12 @@
         @endif
         <div class="box-body">
             <div class="form-group">
-                {!! Form::label('name', 'Name:') !!}
+                {!! Form::label('name', 'Name:') !!} <span class="text-danger">*</span>
                 {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('label', 'Label:') !!}
+                {!! Form::label('label', 'Label:') !!} <span class="text-danger">*</span>
                 {!! Form::text('label', old('label'), ['class' => 'form-control']) !!}
             </div>
 

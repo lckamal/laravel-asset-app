@@ -49,7 +49,8 @@ class PermissionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:permissions|max:255'
+            'name' => 'required|unique:permissions|max:255',
+            'label' => 'required|unique:permissions|max:255',
         ]);
 
         (new Permission($request->all()))->save();
@@ -93,7 +94,8 @@ class PermissionsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|unique:permissions,id,'.$id.'|max:255'
+            'name' => 'required|unique:permissions,id,'.$id.'|max:255',
+            'label' => 'required|unique:permissions,id,'.$id.'|max:255',
         ]);
 
         $permission = Permission::findOrFail($id);
