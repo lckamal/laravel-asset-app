@@ -8,14 +8,14 @@
 <section class="content">
     @if(count($users))
     <div class="box">
-        <div class="box-header">
+        <div class="box-header with-border">
           <h3 class="box-title">Manage Users</h3>
           <div class="box-tools">
             <a class="btn btn-primary btn-sm" href="/users/create"><i class="fa fa-plus"></i> Add User</a>
           </div>
         </div>
         <div class="box-body table-responsive no-padding">
-            <table class="table table-striped table-hover">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -33,7 +33,13 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role_names }}</td>
-                            <td>{{ $user->status ? 'Active' : 'Inactive' }}</td>
+                            <td>
+                                @if($user->status)
+                                    <span class="label label-primary">Active</span>
+                                @else
+                                    <span class="label label-danger">Inactive</span>
+                                @endif
+                            </td>
                             <td>
                                 <a href="/users/{{ $user->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
                                 <a href="/users/delete/{{ $user->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>

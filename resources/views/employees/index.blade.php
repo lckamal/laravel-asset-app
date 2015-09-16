@@ -8,7 +8,7 @@
 <section class="content">
     @if(count($employees))
     <div class="box">
-        <div class="box-header">
+        <div class="box-header with-border">
           <h3 class="box-title">Manage Employees</h3>
           <div class="box-tools">
             <a href="/employees/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Employee</a>

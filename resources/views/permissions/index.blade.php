@@ -8,7 +8,7 @@
 <section class="content">
     @if(count($permissions))
     <div class="box">
-        <div class="box-header">
+        <div class="box-header with-border">
           <h3 class="box-title">Manage Permissions</h3>
           <div class="box-tools">
             <a href="/permissions/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Permission</a>

@@ -8,7 +8,7 @@
 <section class="content">
     @if(count($departments))
     <div class="box">
-        <div class="box-header">
+        <div class="box-header with-border">
           <h3 class="box-title">Manage Departments</h3>
           <div class="box-tools">
             <a class="btn btn-primary btn-sm" href="/departments/create"><i class="fa fa-plus"></i> Add Department</a>
