@@ -16,6 +16,7 @@ elixir(function(mix) {
     	.scripts([
             'libs/jquery.min.js',
             'libs/bootstrap.min.js',
+            'adminlte/app.min.js',
     		'libs/chosen.jquery.min.js',
     		'libs/sweetalert-dev.js',
             'libs/summernote.min.js',
@@ -24,6 +25,8 @@ elixir(function(mix) {
     	.styles([
             //'libs/chosen.min.css',
     		'libs/chosen-bootstrap.css',
+            'adminlte/AdminLTE.min.css',
+            'adminlte/skins/_all-skins.min.css',
             'libs/sweetalert.css',
             'libs/font-awesome.min.css',
             'libs/summernote.css',
@@ -33,5 +36,4 @@ elixir(function(mix) {
 
         mix.copy('resources/assets/fonts', 'public/fonts');
         mix.copy('resources/assets/images', 'public/images');
-    mix.phpUnit();
 });

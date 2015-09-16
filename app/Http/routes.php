@@ -1,7 +1,7 @@
 <?php
 
-Route::get('/', 'PagesController@home');
-Route::get('/home', 'PagesController@home');
+Route::get('/', ['as' => '/', 'uses' => 'PagesController@home']);
+Route::get('/home', ['as' => 'home', 'uses' => 'PagesController@home']);
 
 Route::resource('users', 'UsersController');
 Route::get('users/delete/{id}', 'UsersController@destroy');
@@ -17,6 +17,9 @@ Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 
 Route::resource('assets', 'AssetsController');
 Route::get('assets/delete/{id}', 'AssetsController@destroy');
+
+Route::resource('employees', 'EmployeesController');
+Route::get('employees/delete/{id}', 'EmployeesController@destroy');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

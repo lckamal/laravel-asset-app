@@ -69,4 +69,10 @@ class User extends Model implements AuthenticatableContract,
         $role_names = $this->roles->lists('name')->toArray();
         return implode(', ', $role_names);
     }
+
+    public function getGravatarAttribute()
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "http://www.gravatar.com/avatar/$hash";
+    }
 }

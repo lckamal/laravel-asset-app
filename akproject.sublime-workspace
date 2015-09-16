@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Employee",
+				"EmployeeRequest	(EmployeeRequest.php)"
+			],
+			[
 				"base",
 				"base64_decode()	standard Function"
 			],
@@ -407,30 +411,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/Http/Controllers/UsersController.php",
-			"settings":
-			{
-				"buffer_size": 2766,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/User.php",
-			"settings":
-			{
-				"buffer_size": 1839,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/Auth/AuthController.php",
-			"settings":
-			{
-				"buffer_size": 1777,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -440,9 +420,13 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "insta",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"rena",
+				"File: Rename"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -549,20 +533,35 @@
 	"expanded_folders":
 	[
 		"/Users/apple/Sites/college/akproject",
-		"/Users/apple/Sites/college/akproject/app",
-		"/Users/apple/Sites/college/akproject/database/factories"
+		"/Users/apple/Sites/college/akproject/app"
 	],
 	"file_history":
 	[
+		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_15_160739_create_employee_table.php",
+		"/Users/apple/Sites/college/akproject/resources/views/employees/form.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Utilities/usstate.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Requests/EmployeeRequest.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/EmployeesController.php",
+		"/Users/apple/Sites/college/akproject/app/Employee.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Utilities/timezone.php",
+		"/Users/apple/Desktop/e-list login details.txt",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/UsersController.php",
+		"/Users/apple/Sites/college/akproject/resources/views/employees/index.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/routes.php",
+		"/Users/apple/Sites/college/akproject/resources/views/users/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/layout.blade.php",
+		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_200000_create_users_table.php",
+		"/Users/apple/Sites/college/akproject/resources/views/auth/login.blade.php",
+		"/Users/apple/Sites/college/akproject/config/session.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/Auth/AuthController.php",
+		"/Users/apple/Sites/college/akproject/app/User.php",
 		"/Users/apple/Sites/college/akproject/tests/AuthenticationTest.php",
 		"/Users/apple/Sites/college/akproject/tests/TestCase.php",
 		"/Users/apple/Sites/college/akproject/tests/UsersTest.php",
-		"/Users/apple/Sites/college/akproject/app/User.php",
 		"/Users/apple/Sites/college/akproject/database/factories/ModelFactory.php",
 		"/Users/apple/Sites/college/akproject/.gitignore",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/Handler.php",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/PermissionDeniedException.php",
-		"/Users/apple/Sites/college/akproject/app/Http/Controllers/UsersController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/VerifyRole.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/VerifyPermission.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/RolesController.php",
@@ -571,12 +570,10 @@
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/PagesController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/DepartmentsController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/AssetsController.php",
-		"/Users/apple/Sites/college/akproject/app/Http/routes.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/VerifyCsrfToken.php",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/RoleDeniedException.php",
 		"/Users/apple/Sites/college/akproject/app/Exceptions/AccessDeniedException.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Kernel.php",
-		"/Users/apple/Sites/college/akproject/resources/views/layout.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/PermissionMiddleware.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/Authenticate.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Requests/AssetRequest.php",
@@ -595,7 +592,6 @@
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_11_131245_create_asset_table.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_300000_create_roles_tables.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_000000_create_department_table.php",
-		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_200000_create_users_table.php",
 		"/Users/apple/Sites/college/akproject/database/seeds/DepartmentTableSeeder.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_200000_create_roles_tables.php",
 		"/Users/apple/Sites/college/akproject/gulpfile.js",
@@ -604,7 +600,6 @@
 		"/Users/apple/Sites/college/akproject/resources/views/users/form.blade.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_100000_create_users_table.php",
 		"/Users/apple/Sites/college/akproject/resources/views/roles/form.blade.php",
-		"/Users/apple/Sites/college/akproject/resources/views/users/index.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Permission.php",
 		"/Users/apple/Sites/college/akproject/resources/views/roles/index.blade.php",
 		"/Users/apple/Sites/college/akproject/resources/views/permissions/form.blade.php",
@@ -669,19 +664,7 @@
 		"/Users/apple/Sites/gogulf/viessmann/questions.php",
 		"/Users/apple/Sites/gogulf/viessmann/partials/header.php",
 		"/Users/apple/Sites/gogulf/viessmann/ajax/settings.php",
-		"/Users/apple/Sites/project-flyer/resources/views/flyers/show.blade.php",
-		"/Users/apple/Sites/gogulf/viessmann/partials/question/contact.php",
-		"/Users/apple/Sites/gogulf/viessmann/partials/topBanner.php",
-		"/Users/apple/Sites/gogulf/viessmann/classes/variables.php",
-		"/Users/apple/Sites/project-flyer/app/Photo.php",
-		"/Users/apple/Sites/project-flyer/app/Flyer.php",
-		"/Users/apple/Sites/project-flyer/app/Http/Controllers/FlyersController.php",
-		"/Users/apple/Sites/project-flyer/app/Http/routes.php",
-		"/Users/apple/Sites/project-flyer/vendor/symfony/http-foundation/File/UploadedFile.php",
-		"/Users/apple/Sites/project-flyer/resources/views/layout.blade.php",
-		"/Users/apple/Sites/project-flyer/.env",
-		"/Users/apple/Sites/project-flyer/app/Http/Controllers/FlyControllers.php",
-		"/Users/apple/Sites/project-flyer/tests/FlyersControllerTest.php"
+		"/Users/apple/Sites/project-flyer/resources/views/flyers/show.blade.php"
 	],
 	"find":
 	{
@@ -715,6 +698,48 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"'",
+			"('",
+			"string('",
+			"unique",
+			"unique_vlaidation",
+			"state",
+			"'",
+			");",
+			")->",
+			");",
+			"$table->",
+			"$table->string(",
+			"assets",
+			"Asset",
+			"AssetRequest",
+			"timezone",
+			"marital_status",
+			"ssn",
+			"dob",
+			"mobile",
+			"country",
+			"phone",
+			"zip_code",
+			"region",
+			"country",
+			"state",
+			"city",
+			"street_2",
+			"street_1",
+			"employee_number",
+			"email",
+			"department_id",
+			"name",
+			"department",
+			"User",
+			"user",
+			"User",
+			"user",
+			"Assets",
+			"asset",
+			"Department",
+			"departments",
 			"acl",
 			"Roles",
 			"Bican",
@@ -800,49 +825,7 @@
 			"//",
 			"file",
 			"userfile",
-			"                \n",
-			"this",
-			"col",
-			"span",
-			"/js",
-			"selectpicker",
-			"<select",
-			"btn",
-			"fileup",
-			"fileupload-button",
-			"preview",
-			"get_related_articles",
-			"related_articles_dropdown",
-			"<?",
-			"state",
-			"State",
-			"state",
-			"li",
-			"Flash.php",
-			"site-content",
-			".main-container article img",
-			"Política De Privacidade",
-			"#",
-			"availables",
-			"div",
-			"li",
-			"also",
-			"date",
-			"press_signature",
-			"dateline",
-			"urltolink",
-			"apo.url",
-			"apo.urlto",
-			"content",
-			"highlight",
-			"height",
-			"line",
-			"$table",
-			"\n        ",
-			"$table",
-			"city",
-			"id=\"",
-			"zip_code"
+			"                \n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -864,271 +847,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/Http/Controllers/UsersController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2766,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1986,
-								1986
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2173.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/User.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1839,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1454,
-								1454
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_complete": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 980.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Http/Controllers/Auth/AuthController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1777,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1730,
-								1737
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 953.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1185,6 +905,38 @@
 		"selected_items":
 		[
 			[
+				"employeec",
+				"app/Http/Controllers/EmployeesController.php"
+			],
+			[
+				"employe",
+				"database/migrations/2015_09_15_160739_create_employee_table.php"
+			],
+			[
+				"form.b",
+				"resources/views/employees/form.blade.php"
+			],
+			[
+				"route",
+				"app/Http/routes.php"
+			],
+			[
+				"layout",
+				"resources/views/layout.blade.php"
+			],
+			[
+				"usertable",
+				"database/migrations/2015_09_10_200000_create_users_table.php"
+			],
+			[
+				"employee",
+				"database/migrations/2015_09_15_160739_create_employee_table.php"
+			],
+			[
+				"login",
+				"resources/views/auth/login.blade.php"
+			],
+			[
 				"userscont",
 				"app/Http/Controllers/UsersController.php"
 			],
@@ -1209,10 +961,6 @@
 				"app/Role.php"
 			],
 			[
-				"layout",
-				"resources/views/layout.blade.php"
-			],
-			[
 				"rout",
 				"app/Http/routes.php"
 			],
@@ -1235,10 +983,6 @@
 			[
 				"depar",
 				"app/Department.php"
-			],
-			[
-				"route",
-				"app/Http/routes.php"
 			],
 			[
 				"auth",
@@ -1602,9 +1346,21 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "proj",
+		"last_filter": "nc",
 		"selected_items":
 		[
+			[
+				"nc",
+				"~/Sites/gogulf/nce/nce.sublime-project"
+			],
+			[
+				"nce",
+				"~/Sites/gogulf/nce/nce.sublime-project"
+			],
+			[
+				"",
+				"~/Sites/project-flyer/projectflyer.sublime-project"
+			],
 			[
 				"proj",
 				"~/Sites/project-flyer/projectflyer.sublime-project"
@@ -1612,10 +1368,6 @@
 			[
 				"apos",
 				"~/Sites/gogulf/aposource/aposource.sublime-project"
-			],
-			[
-				"nc",
-				"~/Sites/gogulf/nce/nce.sublime-project"
 			],
 			[
 				"apo",
@@ -1642,16 +1394,8 @@
 				"~/Sites/skrollx/pmtestimonial/pmtestimonial.sublime-project"
 			],
 			[
-				"nce",
-				"~/Sites/gogulf/nce/nce.sublime-project"
-			],
-			[
 				"pr",
 				"~/Sites/project-flyer/projectflyer.sublime-project"
-			],
-			[
-				"",
-				"~/Sites/gogulf/berkeley/berkeley.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1681,7 +1425,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 371.0,
+	"side_bar_width": 279.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
