@@ -14,13 +14,26 @@ class CreateAssetTable extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id');
-            // $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
-            $table->string('asset_name');
-            $table->text('description');
+            $table->integer('department_id')->unsigned();
+            $table->integer('employee_id')->unsigned();
+            $table->integer('category_id')->unsigned();
+            $table->integer('vendor_id')->unsigned();
+            $table->string('name');
+            $table->string('asset_no');
+            $table->text('description')->nullable();
+            $table->string('model');
+            $table->string('serial');
+            $table->string('barcode')->nullable();
+            $table->date('date_acquired')->nullable();
+            $table->date('date_disposed')->nullable();
+            $table->enum('status', ['active', 'inactive', 'repair']);
+            $table->float('purchase_price');
+            $table->float('salvage_value')->nullable();
             $table->string('location');
             $table->boolean('status');
             $table->timestamps();
+            
+            // $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
     }
 

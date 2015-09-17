@@ -42,7 +42,18 @@
                         <li><a href="/departments">Departments</a></li>
                     @endcan
                     @can('manage_assets')
-                        <li><a href="/assets">Assets</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assets <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/assets">Assets</a></li>
+                            @can('manage_categories')
+                                <li><a href="/categories">Categories</a></li>
+                            @endcan
+                            @can('manage_vendors')
+                                <li><a href="/vendors">Vendors</a></li>
+                            @endcan
+                        </ul>
+                    </li>
                     @endcan
                     @can('manage_users')
                     <li class="dropdown">

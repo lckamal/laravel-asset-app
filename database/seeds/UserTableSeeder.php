@@ -11,6 +11,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('departments')->truncate();
+        DB::table('users')->truncate();
+        DB::table('roles')->truncate();
+        DB::table('permissions')->truncate();
+        DB::table('role_user')->truncate();
+        DB::table('permission_role')->truncate();
+
         DB::table('departments')->insert([
             'department_name' => 'Head office'
         ]);
@@ -29,8 +36,38 @@ class UserTableSeeder extends Seeder
         ]);
 
         DB::table('permissions')->insert([
-            'name' => 'manage_users',
-            'label' => 'Manage user accounts'
+            [
+                'name' => 'manage_users',
+                'label' => 'Manage user accounts'
+            ],
+            [
+                'name' => 'manage_roles',
+                'label' => 'Manage roles'
+            ],
+            [
+                'name' => 'manage_permissions',
+                'label' => 'Manage permissions'
+            ],
+            [
+                'name' => 'manage_departments',
+                'label' => 'Manage departments'
+            ],
+            [
+                'name' => 'manage_employees',
+                'label' => 'Manage employees'
+            ],
+            [
+                'name' => 'manage_assets',
+                'label' => 'Manage assets'
+            ],
+            [
+                'name' => 'manage_categories',
+                'label' => 'Manage categories'
+            ],
+            [
+                'name' => 'manage_vendors',
+                'label' => 'Manage vendors'
+            ],
         ]);
 
         DB::table('role_user')->insert([
@@ -39,8 +76,14 @@ class UserTableSeeder extends Seeder
         ]);
 
         DB::table('permission_role')->insert([
-            'permission_id' => '1',
-            'role_id' => '1',
+            [
+                'permission_id' => '1',
+                'role_id' => '1',
+            ],
+            [
+                'permission_id' => '2',
+                'role_id' => '1',
+            ]
         ]);
     }
 }

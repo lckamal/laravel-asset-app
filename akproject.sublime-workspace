@@ -533,28 +533,57 @@
 	"expanded_folders":
 	[
 		"/Users/apple/Sites/college/akproject",
-		"/Users/apple/Sites/college/akproject/app"
+		"/Users/apple/Sites/college/akproject/resources",
+		"/Users/apple/Sites/college/akproject/resources/views",
+		"/Users/apple/Sites/college/akproject/resources/views/roles"
 	],
 	"file_history":
 	[
-		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_15_160739_create_employee_table.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/UsersController.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Requests/UserRequest.php",
+		"/Users/apple/Sites/college/akproject/resources/views/users/form.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/PermissionsController.php",
+		"/Users/apple/Sites/college/akproject/resources/views/permissions/form.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/roles/form.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/RolesController.php",
+		"/Users/apple/Sites/college/akproject/resources/views/employees/index.blade.php",
 		"/Users/apple/Sites/college/akproject/resources/views/employees/form.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/Controllers/EmployeesController.php",
+		"/Users/apple/Sites/college/akproject/resources/views/assets/form.blade.php",
+		"/Users/apple/Downloads/AdminLTE2/pages/tables/simple.html",
+		"/Users/apple/Sites/college/akproject/resources/views/assets/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/roles/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/permissions/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/departments/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/users/index.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/departments/form.blade.php",
+		"/Users/apple/Sites/college/akproject/app/Http/breadcrumbs.php",
+		"/Users/apple/Sites/college/akproject/app/Asset.php",
+		"/Users/apple/Sites/college/akproject/config/breadcrumbs.php",
+		"/Users/apple/Sites/college/akproject/resources/views/topnavlayout.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/layout.blade.php",
+		"/Users/apple/Downloads/AdminLTE2/pages/examples/login.html",
+		"/Users/apple/Sites/college/akproject/resources/views/auth/login.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/views/errors/validation.blade.php",
+		"/Users/apple/Sites/college/akproject/resources/assets/css/style.css",
+		"/Users/apple/Sites/college/akproject/app/Http/routes.php",
+		"/Users/apple/Downloads/AdminLTE2/pages/forms/general.html",
+		"/Users/apple/Sites/college/akproject/app/User.php",
+		"/Users/apple/Sites/college/akproject/resources/views/pages/home.blade.php",
+		"/Users/apple/Sites/college/akproject/config/app.php",
+		"/Users/apple/Sites/college/akproject/gulpfile.js",
+		"/Users/apple/Sites/college/akproject/resources/assets/sass/app.scss",
+		"/Users/apple/Sites/college/akproject/public/css/app.css",
+		"/Users/apple/Downloads/AdminLTE2/pages/layout/top-nav.html",
+		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_15_160739_create_employee_table.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Utilities/usstate.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Requests/EmployeeRequest.php",
-		"/Users/apple/Sites/college/akproject/app/Http/Controllers/EmployeesController.php",
 		"/Users/apple/Sites/college/akproject/app/Employee.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Utilities/timezone.php",
 		"/Users/apple/Desktop/e-list login details.txt",
-		"/Users/apple/Sites/college/akproject/app/Http/Controllers/UsersController.php",
-		"/Users/apple/Sites/college/akproject/resources/views/employees/index.blade.php",
-		"/Users/apple/Sites/college/akproject/app/Http/routes.php",
-		"/Users/apple/Sites/college/akproject/resources/views/users/index.blade.php",
-		"/Users/apple/Sites/college/akproject/resources/views/layout.blade.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_200000_create_users_table.php",
-		"/Users/apple/Sites/college/akproject/resources/views/auth/login.blade.php",
 		"/Users/apple/Sites/college/akproject/config/session.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/Auth/AuthController.php",
-		"/Users/apple/Sites/college/akproject/app/User.php",
 		"/Users/apple/Sites/college/akproject/tests/AuthenticationTest.php",
 		"/Users/apple/Sites/college/akproject/tests/TestCase.php",
 		"/Users/apple/Sites/college/akproject/tests/UsersTest.php",
@@ -564,9 +593,7 @@
 		"/Users/apple/Sites/college/akproject/app/Exceptions/PermissionDeniedException.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/VerifyRole.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/VerifyPermission.php",
-		"/Users/apple/Sites/college/akproject/app/Http/Controllers/RolesController.php",
 		"/Users/apple/Sites/college/akproject/app/HasRoles.php",
-		"/Users/apple/Sites/college/akproject/app/Http/Controllers/PermissionsController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/PagesController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/DepartmentsController.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/AssetsController.php",
@@ -578,7 +605,6 @@
 		"/Users/apple/Sites/college/akproject/app/Http/Middleware/Authenticate.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Requests/AssetRequest.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Requests/Request.php",
-		"/Users/apple/Sites/college/akproject/app/Http/Requests/UserRequest.php",
 		"/Users/apple/Sites/college/akproject/app/Role.php",
 		"/Users/apple/Sites/college/akproject/app/Providers/AuthServiceProvider.php",
 		"/Users/apple/.ssh/id_rsa.pub",
@@ -588,26 +614,17 @@
 		"/Users/apple/Sites/college/akproject/database/seeds/UserTableSeeder.php",
 		"/Users/apple/Sites/college/akproject/app/Department.php",
 		"/Users/apple/Sites/college/akproject/config/auth.php",
-		"/Users/apple/Sites/college/akproject/resources/views/pages/home.blade.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_11_131245_create_asset_table.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_300000_create_roles_tables.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_000000_create_department_table.php",
 		"/Users/apple/Sites/college/akproject/database/seeds/DepartmentTableSeeder.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_200000_create_roles_tables.php",
-		"/Users/apple/Sites/college/akproject/gulpfile.js",
 		"/Users/apple/Sites/college/akproject/composer.json",
 		"/Users/apple/Sites/college/akproject/app/Http/Flash.php",
-		"/Users/apple/Sites/college/akproject/resources/views/users/form.blade.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_10_100000_create_users_table.php",
-		"/Users/apple/Sites/college/akproject/resources/views/roles/form.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Permission.php",
-		"/Users/apple/Sites/college/akproject/resources/views/roles/index.blade.php",
-		"/Users/apple/Sites/college/akproject/resources/views/permissions/form.blade.php",
-		"/Users/apple/Sites/college/akproject/resources/views/permissions/index.blade.php",
 		"/Users/apple/Sites/college/akproject/database/migrations/2015_09_12_131321_create_roles_tables.php",
 		"/Users/apple/Sites/college/akproject/resources/views/home.blade.php",
-		"/Users/apple/Sites/college/akproject/resources/assets/css/style.css",
-		"/Users/apple/Sites/college/akproject/resources/views/departments/index.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/DepartmentController.php",
 		"/Users/apple/Sites/project-flyer/resources/views/flyers/index.blade.php",
 		"/Users/apple/Sites/college/akproject/app/Http/Controllers/Controller.php",
@@ -649,22 +666,7 @@
 		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/language/arabic/article_lang.php",
 		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/themes/nce/views/partials/header.html",
 		"/Users/apple/Sites/gogulf/viessmann/uploads/.gitignore",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/themes/nce/css/style.css",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/tag.php",
-		"/Users/apple/Sites/gogulf/nce/system/cms/config/routes.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/view.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/partials/simple_filter.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/widgets/individual/individual.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/explore.php",
-		"/Users/apple/Sites/gogulf/nce/.gitignore",
-		"/Users/apple/Sites/gogulf/nce/system/cms/modules/streams_core/controllers/ajax.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/index.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/partials/article_thumb_block.php",
-		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article/views/advanced.php",
-		"/Users/apple/Sites/gogulf/viessmann/questions.php",
-		"/Users/apple/Sites/gogulf/viessmann/partials/header.php",
-		"/Users/apple/Sites/gogulf/viessmann/ajax/settings.php",
-		"/Users/apple/Sites/project-flyer/resources/views/flyers/show.blade.php"
+		"/Users/apple/Sites/gogulf/nce/addons/shared_addons/themes/nce/css/style.css"
 	],
 	"find":
 	{
@@ -675,6 +677,9 @@
 		"height": 164.0,
 		"where_history":
 		[
+			"/Users/apple/Sites/college/akproject/public",
+			"/Users/apple/Sites/college/akproject/resources",
+			"/Users/apple/Sites/college/akproject",
 			"/Users/apple/Sites/college/akproject/app",
 			"/Users/apple/Sites/college/akproject",
 			"/Users/apple/Sites/gogulf/nce/addons/shared_addons/modules/article",
@@ -698,6 +703,34 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Departmanet",
+			"date",
+			"user",
+			"role",
+			"department",
+			"user",
+			"role",
+			"Role",
+			"role",
+			"Employee",
+			"user",
+			"User",
+			"asset",
+			"Employee",
+			"employee",
+			"Employee",
+			"Department",
+			"department",
+			"User",
+			"users",
+			"Users",
+			"create",
+			"index",
+			"Home",
+			"caret",
+			"padding-top: 70px",
+			"padding-top: 70px;",
+			"body {\n    padding-top: 70px;\n}",
 			"'",
 			"('",
 			"string('",
@@ -797,35 +830,7 @@
 			"departments",
 			"epartments",
 			"flyer",
-			"flyers",
-			"company",
-			"');\n",
-			"Version",
-			"field_type_id",
-			"Description",
-			"address",
-			"publish",
-			"article->",
-			"membership",
-			"set_",
-			"$featured",
-			"featured",
-			"publish_lang",
-			"article:set_featured_success",
-			"article:unset_featured_success",
-			"article_featured",
-			"article['",
-			"tags",
-			":hover",
-			"article_id",
-			"advanced",
-			"fiew",
-			"bannerImage",
-			"$ds",
-			"//",
-			"file",
-			"userfile",
-			"                \n"
+			"flyers"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -905,6 +910,62 @@
 		"selected_items":
 		[
 			[
+				"user/for",
+				"resources/views/users/form.blade.php"
+			],
+			[
+				"userrq",
+				"app/Http/Requests/UserRequest.php"
+			],
+			[
+				"userscont",
+				"app/Http/Controllers/UsersController.php"
+			],
+			[
+				"rolescon",
+				"app/Http/Controllers/RolesController.php"
+			],
+			[
+				"permission/for",
+				"resources/views/permissions/form.blade.php"
+			],
+			[
+				"permissioncon",
+				"app/Http/Controllers/PermissionsController.php"
+			],
+			[
+				"employ/fo",
+				"resources/views/employees/form.blade.php"
+			],
+			[
+				"form.bla",
+				"resources/views/users/form.blade.php"
+			],
+			[
+				"user/ind",
+				"resources/views/users/index.blade.php"
+			],
+			[
+				"users/index",
+				"resources/views/users/index.blade.php"
+			],
+			[
+				"index.b",
+				"resources/views/assets/index.blade.php"
+			],
+			[
+				"login",
+				"resources/views/auth/login.blade.php"
+			],
+			[
+				"users/ind",
+				"resources/views/users/index.blade.php"
+			],
+			[
+				"routes",
+				"app/Http/routes.php"
+			],
+			[
 				"employeec",
 				"app/Http/Controllers/EmployeesController.php"
 			],
@@ -931,14 +992,6 @@
 			[
 				"employee",
 				"database/migrations/2015_09_15_160739_create_employee_table.php"
-			],
-			[
-				"login",
-				"resources/views/auth/login.blade.php"
-			],
-			[
-				"userscont",
-				"app/Http/Controllers/UsersController.php"
 			],
 			[
 				"user",
@@ -1079,10 +1132,6 @@
 			[
 				"pages/hom",
 				"resources/views/pages/home.blade.php"
-			],
-			[
-				"routes",
-				"app/Http/routes.php"
 			],
 			[
 				"user.ph",
@@ -1346,9 +1395,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "nc",
+		"last_filter": "apos",
 		"selected_items":
 		[
+			[
+				"apos",
+				"~/Sites/gogulf/aposource/aposource.sublime-project"
+			],
 			[
 				"nc",
 				"~/Sites/gogulf/nce/nce.sublime-project"
@@ -1364,10 +1417,6 @@
 			[
 				"proj",
 				"~/Sites/project-flyer/projectflyer.sublime-project"
-			],
-			[
-				"apos",
-				"~/Sites/gogulf/aposource/aposource.sublime-project"
 			],
 			[
 				"apo",
@@ -1423,7 +1472,7 @@
 	},
 	"show_minimap": true,
 	"show_open_files": true,
-	"show_tabs": false,
+	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 279.0,
 	"status_bar_visible": true,

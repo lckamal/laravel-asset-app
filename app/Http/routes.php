@@ -21,6 +21,12 @@ Route::get('assets/delete/{id}', 'AssetsController@destroy');
 Route::resource('employees', 'EmployeesController');
 Route::get('employees/delete/{id}', 'EmployeesController@destroy');
 
+Route::resource('categories', 'CategoriesController');
+Route::get('categories/delete/{id}', 'CategoriesController@destroy');
+
+Route::resource('vendors', 'VendorsController');
+Route::get('vendors/delete/{id}', 'VendorsController@destroy');
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

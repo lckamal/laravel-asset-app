@@ -131,3 +131,45 @@ Breadcrumbs::register('assets.edit', function($breadcrumbs)
     $breadcrumbs->parent('assets.index');
     $breadcrumbs->push('Edit Asset', route('assets.edit'));
 });
+
+// Home > Categories
+Breadcrumbs::register('categories.index', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Categories', route('categories.index'));
+});
+
+// Home > Categories
+Breadcrumbs::register('categories.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('categories.index');
+    $breadcrumbs->push('Create Category', route('categories.create'));
+});
+
+// Home > Categories
+Breadcrumbs::register('categories.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('categories.index');
+    $breadcrumbs->push('Edit Category', route('categories.edit'));
+});
+
+// Home > Vendors
+Breadcrumbs::register('vendors.index', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Vendors', route('vendors.index'));
+});
+
+// Home > Vendors
+Breadcrumbs::register('vendors.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('vendors.index');
+    $breadcrumbs->push('Create Vendor', route('vendors.create'));
+});
+
+// Home > Vendors
+Breadcrumbs::register('vendors.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('vendors.index');
+    $breadcrumbs->push('Edit Vendor', route('vendors.edit'));
+});
