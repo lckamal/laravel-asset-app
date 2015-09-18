@@ -5,7 +5,7 @@ $(function(){
 	}
 	if($.isFunction($.fn.inputmask))
 	{
-		$(".datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+		$(".datemask").inputmask("yyyy-mm-dd", {"placeholder": "yyyy-mm-dd"});
 		$(".ssnmask").inputmask("999-99-9999",{placeholder:"xxx-xx-xxxx"});
 	}
 });
