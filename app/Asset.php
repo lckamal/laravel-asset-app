@@ -38,6 +38,18 @@ class Asset extends Model
         'status',
     ];
 
+    public function getDateAcquiredAttribute()
+    {
+        return date('Y-m-d', strtotime($this->attributes['date_acquired']));
+    }
+
+    public function getDateDisposedAttribute()
+    {
+        $disposed_time = strtotime($this->attributes['date_disposed']);
+        if($disposed_time <= 0) return null;
+        
+        return date('Y-m-d', $disposed_time);
+    }
     /**
      * Asset belongs to a department
      * 
