@@ -49,11 +49,11 @@ class DepartmentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'department_name' => 'required|unique:departments|max:255'
+            'name' => 'required|unique:departments|max:255'
         ]);
 
         $dept = new Department;
-        $dept->department_name = $request->department_name;
+        $dept->name = $request->name;
         $dept->save();
 
         flash()->success('Success!', 'Department created successfully');
@@ -95,7 +95,7 @@ class DepartmentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'department_name' => 'required|unique:departments,id,'.$id.'|max:255'
+            'name' => 'required|unique:departments,id,'.$id.'|max:255'
         ]);
 
         $department = Department::findOrFail($id);

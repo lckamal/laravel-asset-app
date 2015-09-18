@@ -40,7 +40,7 @@ $factory->define(App\Role::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Department::class, function (Faker\Generator $faker) {
     return [
-        'department_name' => $faker->company,
+        'name' => $faker->company,
     ];
 });
 

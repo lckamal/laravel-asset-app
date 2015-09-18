@@ -41,7 +41,7 @@
             
             <div class="form-group">
                 {!! Form::label('department_id', 'Department:') !!} <span class="text-danger">*</span>
-                {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('department_name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+                {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
             </div>
 
             <div class="form-group">

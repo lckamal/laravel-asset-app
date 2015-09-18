@@ -26,11 +26,10 @@ class CreateAssetTable extends Migration
             $table->string('barcode')->nullable();
             $table->date('date_acquired')->nullable();
             $table->date('date_disposed')->nullable();
-            $table->enum('status', ['active', 'inactive', 'repair']);
             $table->float('purchase_price');
             $table->float('salvage_value')->nullable();
             $table->string('location');
-            $table->boolean('status');
+            $table->enum('status', ['active', 'inactive', 'repair']);
             $table->timestamps();
             
             // $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');

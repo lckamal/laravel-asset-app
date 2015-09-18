@@ -18,8 +18,8 @@
         @endif
             <div class="box-body">
                 <div class="form-group">
-                    {!! Form::label('department_name', 'Department Name:') !!}
-                    {!! Form::text('department_name', old('department_name'), ['class' => 'form-control']) !!}
+                    {!! Form::label('name', 'Department Name:') !!}
+                    {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                 </div>
 
                 <hr>

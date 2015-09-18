@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
         DB::table('permission_role')->truncate();
 
         DB::table('departments')->insert([
-            'department_name' => 'Head office'
+            'name' => 'Head office'
         ]);
         
         DB::table('users')->insert([

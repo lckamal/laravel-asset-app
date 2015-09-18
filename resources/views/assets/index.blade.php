@@ -19,6 +19,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Asset No.</th>
                         <th>Name</th>
                         <th>Department</th>
                         <th>location</th>
@@ -30,8 +31,9 @@
                     @foreach($assets as $asset)
                         <tr>
                             <td>{{ $asset->id }}</td>
-                            <td>{{ $asset->asset_name }}</td>
-                            <td>{{ $asset->department->department_name }}</td>
+                            <td>{{ $asset->asset_no }}</td>
+                            <td>{{ $asset->name }}</td>
+                            <td>{{ $asset->department->name }}</td>
                             <td>{{ $asset->location }}</td>
                             <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>

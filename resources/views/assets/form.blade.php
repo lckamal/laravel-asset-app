@@ -1,6 +1,10 @@
 @extends('layout')
 @section('content')
 @inject('departments', 'App\Department')
+@inject('categories', 'App\Category')
+@inject('vendors', 'App\Vendor')
+@inject('employees', 'App\Employee')
+
 <?php $assetcrumb = isset($asset) ? 'assets.edit' : 'assets.create'; ?>
 
 <section class="content-header">
@@ -18,14 +22,15 @@
             {!! Form::open(array('url' => 'assets', 'enctype' => 'multipart/form-data')) !!}
         @endif
         <div class="box-body">
+
             <div class="form-group">
-                {!! Form::label('department_id', 'Department:') !!}
-                {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('department_name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+                {!! Form::label('asset_no', 'Asset No:') !!} <span class="text-danger">*</span>
+                {!! Form::text('asset_no', old('asset_no'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('asset_name', 'Name:') !!}
-                {!! Form::text('asset_name', old('asset_name'), ['class' => 'form-control']) !!}
+                {!! Form::label('name', 'Name:') !!} <span class="text-danger">*</span>
+                {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
@@ -34,13 +39,84 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('location', 'Location:') !!}
+                {!! Form::label('model', 'Model:') !!} <span class="text-danger">*</span>
+                {!! Form::text('model', old('model'), ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('serial', 'Serial:') !!} <span class="text-danger">*</span>
+                {!! Form::text('serial', old('serial'), ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('purchase_price', 'Purchase price:') !!} <span class="text-danger">*</span>
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  {!! Form::text('purchase_price', old('purchase_price'), ['class' => 'form-control']) !!}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('salvage_value', 'Salvage value:') !!}
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  {!! Form::text('salvage_value', old('salvage_value'), ['class' => 'form-control']) !!}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('barcode', 'Barcode:') !!}
+                {!! Form::text('barcode', old('barcode'), ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('date_acquired', 'Date acquired:') !!} <span class="text-danger">*</span>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                    {!! Form::text('date_acquired', old('date_acquired'), ['class' => 'form-control datepicker', 'data-inputmask="\'alias\': \'yyyy-mm-dd\'"', 'data-mask']) !!}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('date_disposed', 'Date disposed:') !!}
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                    {!! Form::text('date_disposed', old('date_disposed'), ['class' => 'form-control datepicker', 'data-inputmask="\'alias\': \'yyyy-mm-dd\'"', 'data-mask']) !!}
+                </div>
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('category_id', 'Category:') !!} <span class="text-danger">*</span>
+                {!! Form::select('category_id', array('' => 'Select Category') + (array)$categories->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('department_id', 'Department:') !!} <span class="text-danger">*</span>
+                {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('vendor_id', 'Vendor:') !!} <span class="text-danger">*</span>
+                {!! Form::select('vendor_id', array('' => 'Select Vendor') + (array)$vendors->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('employee_id', 'Employee:') !!} <span class="text-danger">*</span>
+                {!! Form::select('employee_id', array('' => 'Select Employee') + (array)$employees->lists('first_name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('location', 'Location:') !!} <span class="text-danger">*</span>
                 {!! Form::text('location', old('location'), ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('status', 'Status:') !!}
-                {!! Form::select('status', array('1' => 'Active', '0' => 'Inactive'), null, ['class' => 'form-control chosen-input']) !!}
+                {!! Form::label('status', 'Status:') !!} <span class="text-danger">*</span>
+                {!! Form::select('status', array('active' => 'Active', 'inactive' => 'Inactive', 'repair' => 'In repair'), null, ['class' => 'form-control chosen-input']) !!}
             </div>
 
             <hr>

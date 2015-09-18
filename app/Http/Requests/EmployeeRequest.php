@@ -33,7 +33,7 @@ class EmployeeRequest extends Request
             'street_1'  => 'required',
             'street_2'  => '',
             'city'  => 'required|max:50',
-            'state'  => 'required',
+            'state'  => '',
             'region'  => 'required',
             'country'  => 'required',
             'zip_code'  => 'required|max:8',

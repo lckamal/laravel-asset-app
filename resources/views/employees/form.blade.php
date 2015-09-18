@@ -131,7 +131,7 @@
 
                     <div class="col-sm-6">
                         <div class="form-group">
-                            {!! Form::label('state', 'State:') !!} <span class="text-danger">*</span>
+                            {!! Form::label('state', 'State:') !!}
                             {!! Form::select('state', array('' => 'Non-US') + (array)$usstate::all(), null, ['class' => 'form-control chosen-input']) !!}
                         </div>
                     </div>
