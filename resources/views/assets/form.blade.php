@@ -75,7 +75,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                    {!! Form::text('date_acquired', old('date_acquired'), ['class' => 'form-control datepicker', 'data-inputmask="\'alias\': \'yyyy-mm-dd\'"', 'data-mask']) !!}
+                    {!! Form::text('date_acquired', old('date_acquired'), ['class' => 'form-control datemask', 'data-mask']) !!}
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                    {!! Form::text('date_disposed', old('date_disposed'), ['class' => 'form-control datepicker', 'data-inputmask="\'alias\': \'yyyy-mm-dd\'"', 'data-mask']) !!}
+                    {!! Form::text('date_disposed', old('date_disposed'), ['class' => 'form-control datemask', 'data-mask']) !!}
                 </div>
             </div>
 

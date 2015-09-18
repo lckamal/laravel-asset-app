@@ -82,7 +82,7 @@
                               <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                               </div>
-                              {!! Form::text('dob', old('dob'), ['class' => 'form-control', 'data-inputmask="\'alias\': \'yyyy-mm-dd\'"', 'data-mask']) !!}
+                              {!! Form::text('dob', old('dob'), ['class' => 'form-control datemask', 'data-mask']) !!}
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             {!! Form::label('ssn', 'SSN:') !!}
-                            {!! Form::text('ssn', old('ssn'), ['class' => 'form-control datepicker', 'placeholder' => 'xx-xxx-xxxx', 'maxlength' => '11']) !!}
+                            {!! Form::text('ssn', old('ssn'), ['class' => 'form-control ssnmask', 'data-mask']) !!}
                         </div>
                     </div>
 
