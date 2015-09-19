@@ -6,6 +6,16 @@
   {!! Breadcrumbs::render('assets.index') !!}
 </section>
 <section class="content">
+    
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="/assets"><i class="fa fa-list"></i> List View</a>
+        </li>
+        <li role="presentation">
+            <a href="/assets/map"><i class="fa fa-map-signs"></i> Map View</a>
+        </li>
+    </ul>
+
     @if(count($assets))
     <div class="box">
         <div class="box-header with-border">
@@ -34,7 +44,7 @@
                             <td>{{ $asset->asset_no }}</td>
                             <td>{{ $asset->name }}</td>
                             <td>{{ $asset->department->name }}</td>
-                            <td>{{ $asset->location }}</td>
+                            <td>{{ $asset->location_lat }} {{ $asset->location_long }}</td>
                             <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>
                                 <a href="/assets/{{ $asset->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
@@ -45,6 +55,9 @@
 
                 </tbody>
             </table>
+        </div>
+        <div class="box-footer clearfix">
+            {!! $assets->render() !!}
         </div>
     </div>
     @else

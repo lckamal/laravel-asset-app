@@ -110,8 +110,11 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('location', 'Location:') !!} <span class="text-danger">*</span>
-                {!! Form::text('location', old('location'), ['class' => 'form-control']) !!}
+                {!! Form::label('location_lat', 'Location:') !!} <span class="text-danger">*</span>
+                <div class="form-inline">
+                    {!! Form::text('location_lat', old('location_lat'), ['class' => 'form-control', 'placeholder' => 'Latitude']) !!}
+                    {!! Form::text('location_long', old('location_long'), ['class' => 'form-control', 'placeholder' => 'Longitude']) !!}
+                </div>
             </div>
 
             <div class="form-group">

@@ -44,11 +44,60 @@ $factory->define(App\Department::class, function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Vendor::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->company,
+    ];
+});
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->text($maxNbChars = 200),
+    ];
+});
+
+$factory->define(App\Employee::class, function (Faker\Generator $faker) {
+    return [
+        'first_name' => $faker->firstName,
+        'last_name' => $faker->lastName,
+        'email' => $faker->email,
+        'employee_number' => $faker->numberBetween(10,1000),
+        'street_1' => $faker->streetAddress,
+        'street_2' => null,
+        'city' => $faker->city,
+        'state' => $faker->state,
+        'region' => null,
+        'country' => $faker->countryCode,
+        'zip_code' => $faker->postcode,
+        'phone' => null,
+        'mobile' => $faker->phoneNumber,
+        'marital_status' => $faker->shuffle('married', 'single'),
+        'dob' => $faker->dateTimeThisCentury->format('Y-m-d'),
+        'ssn' => null,
+        'timezone' => $faker->timezone,
+        'drivers_license' => null,
+    ];
+});
+
 $factory->define(App\Asset::class, function (Faker\Generator $faker) {
     return [
-        'asset_name' => $faker->name,
+        'name' => $faker->name,
+        'asset_no' => $faker->randomNumber(4),
         'department_id' => factory('App\Department')->create()->id,
+        'category_id' => factory('App\Category')->create()->id,
+        'employee_id' => factory('App\Employee')->create()->id,
+        'vendor_id' => factory('App\Vendor')->create()->id,
         'description' => $faker->paragraph,
-        'location' => $faker->address,
+        'model' => $faker->word,
+        'serial' => $faker->randomLetter,
+        'barcode' => $faker->ean13,
+        'date_acquired' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'date_disposed' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'purchase_price' => $faker->randomNumber(3),
+        'salvage_value' => 0,
+        'location_lat' => $faker->latitude,
+        'location_long' => $faker->longitude,
+        'status' => 'active',
     ];
 });

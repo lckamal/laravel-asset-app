@@ -39,7 +39,8 @@ class AssetRequest extends Request
             'department_id' => 'required',
             'vendor_id' => 'required',
             'employee_id' => 'required',
-            'location' => 'required|max:255',
+            'location_lat' => '',
+            'location_long' => '',
             'status' => 'required'
         ];
         return $validation;

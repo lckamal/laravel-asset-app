@@ -3,6 +3,8 @@
 Route::get('/', ['as' => '/', 'uses' => 'PagesController@home']);
 Route::get('/home', ['as' => 'home', 'uses' => 'PagesController@home']);
 
+// Route::get('/map', ['as' => 'map', 'uses' => 'LocationsController@map']);
+
 Route::resource('users', 'UsersController');
 Route::get('users/delete/{id}', 'UsersController@destroy');
 
@@ -15,6 +17,7 @@ Route::get('permissions/delete/{id}', 'PermissionsController@destroy');
 Route::resource('departments', 'DepartmentsController');
 Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 
+Route::get('assets/map', ['as' => 'assets.map', 'uses' => 'AssetsController@map']);
 Route::resource('assets', 'AssetsController');
 Route::get('assets/delete/{id}', 'AssetsController@destroy');
 

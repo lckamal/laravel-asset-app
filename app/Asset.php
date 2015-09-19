@@ -34,7 +34,8 @@ class Asset extends Model
         'department_id',
         'vendor_id',
         'employee_id',
-        'location',
+        'location_lat',
+        'location_long',
         'status',
     ];
 

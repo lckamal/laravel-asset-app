@@ -25,7 +25,7 @@ class AssetsController extends Controller
      */
     public function index()
     {
-        $assets = Asset::all();
+        $assets = Asset::paginate(30);
 
         return View('assets.index', compact('assets'));
     }
@@ -54,6 +54,16 @@ class AssetsController extends Controller
 
         flash()->success('Success!', 'Asset has been created!');
         return redirect('assets');
+    }
+
+    /**
+     * display assets with map view
+     * @return Response
+     */
+    public function map()
+    {
+        $assets = Asset::all();
+        return View('assets.map', compact('assets'));
     }
 
     /**
@@ -104,6 +114,8 @@ class AssetsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Asset::destroy($id);
+        flash()->success('Success!', 'Asset has been deleted!');
+        return redirect('assets');
     }
 }

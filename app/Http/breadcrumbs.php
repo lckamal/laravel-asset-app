@@ -131,6 +131,12 @@ Breadcrumbs::register('assets.edit', function($breadcrumbs)
     $breadcrumbs->parent('assets.index');
     $breadcrumbs->push('Edit Asset', route('assets.edit'));
 });
+// Home > Assets > map
+Breadcrumbs::register('assets.map', function($breadcrumbs)
+{
+    $breadcrumbs->parent('assets.index');
+    $breadcrumbs->push('Map', route('assets.map'));
+});
 
 // Home > Categories
 Breadcrumbs::register('categories.index', function($breadcrumbs)
