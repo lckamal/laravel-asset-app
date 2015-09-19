@@ -29,7 +29,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="/">Asset Management</a>
+                    <a class="navbar-brand" href="{{ Auth::check() ? '/home' : '/' }}">Asset Management</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
