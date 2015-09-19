@@ -26,8 +26,18 @@ class AssetsController extends Controller
     public function index()
     {
         $assets = Asset::paginate(30);
-
         return View('assets.index', compact('assets'));
+    }
+
+    /**
+     * Display a listing of the resource with grid view.
+     *
+     * @return Response
+     */
+    public function grid()
+    {
+        $assets = Asset::paginate(30);
+        return View('assets.grid', compact('assets'));
     }
 
     /**

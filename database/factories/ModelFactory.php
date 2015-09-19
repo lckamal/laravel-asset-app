@@ -77,6 +77,8 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
         'ssn' => null,
         'timezone' => $faker->timezone,
         'drivers_license' => null,
+        // 'image' => $faker->imageUrl($width = 640, $height = 480)
+        'image' => null
     ];
 });
 

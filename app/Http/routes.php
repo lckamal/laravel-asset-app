@@ -18,6 +18,7 @@ Route::resource('departments', 'DepartmentsController');
 Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 
 Route::get('assets/map', ['as' => 'assets.map', 'uses' => 'AssetsController@map']);
+Route::get('assets/grid', ['as' => 'assets.grid', 'uses' => 'AssetsController@grid']);
 Route::resource('assets', 'AssetsController');
 Route::get('assets/delete/{id}', 'AssetsController@destroy');
 

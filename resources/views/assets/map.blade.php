@@ -10,6 +10,9 @@
         <li role="presentation">
             <a href="/assets"><i class="fa fa-list"></i> List View</a>
         </li>
+        <li role="presentation">
+            <a href="/assets/grid"><i class="fa fa-th-large"></i> Grid View</a>
+        </li>
         <li role="presentation" class="active">
             <a href="/assets/map"><i class="fa fa-map-signs"></i> Map View</a>
         </li>
