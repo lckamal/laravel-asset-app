@@ -41,6 +41,7 @@ class AssetRequest extends Request
             'employee_id' => 'required',
             'location_lat' => '',
             'location_long' => '',
+            'image' => 'mimes:png,jpeg,jpg',
             'status' => 'required'
         ];
         return $validation;

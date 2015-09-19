@@ -30,6 +30,7 @@ class CreateAssetTable extends Migration
             $table->float('salvage_value')->nullable();
             $table->float('location_lat')->nullable();
             $table->float('location_long')->nullable();
+            $table->string('image')->nullable();
             $table->enum('status', ['active', 'inactive', 'repair']);
             $table->timestamps();
             

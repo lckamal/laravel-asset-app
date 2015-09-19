@@ -50,7 +50,8 @@ class AssetsController extends Controller
     public function store(AssetRequest $request)
     {
         $asset = new Asset($request->all());
-        $asset->save();
+        $asset->save()->saveImage();
+        
 
         flash()->success('Success!', 'Asset has been created!');
         return redirect('assets');
@@ -101,6 +102,7 @@ class AssetsController extends Controller
     {
         $asset = Asset::findOrFail($id);
         $asset->update($request->all());
+        $asset->saveImage($request);
         
         flash()->success('Success!', 'Asset updated successfully!');
         return redirect('assets');

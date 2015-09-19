@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Requests\AssetRequest;
 use Illuminate\Database\Eloquent\Model;
 
 class Asset extends Model
@@ -36,14 +37,37 @@ class Asset extends Model
         'employee_id',
         'location_lat',
         'location_long',
+        'image',
         'status',
     ];
 
+    public function saveImage(AssetRequest $request)
+    {
+        if(! $request->file('image')) return null;
+        $uploadPath = '/images/assets/';
+
+        $imageName = $this->id . '.' . 
+            $request->file('image')->getClientOriginalExtension();
+
+        $imagePath = base_path() . '/public' . $uploadPath;
+        $request->file('image')->move($imagePath, $imageName);
+        $this->update(
+            ['image' => $uploadPath.$imageName]
+        );
+    }
+    /**
+     * date_acquired attribute in yyyy-mm-dd format
+     * @return string
+     */
     public function getDateAcquiredAttribute()
     {
         return date('Y-m-d', strtotime($this->attributes['date_acquired']));
     }
 
+    /**
+     * date_disposed attribute in yyyy-mm-dd format
+     * @return string
+     */
     public function getDateDisposedAttribute()
     {
         $disposed_time = strtotime($this->attributes['date_disposed']);
@@ -51,6 +75,7 @@ class Asset extends Model
         
         return date('Y-m-d', $disposed_time);
     }
+
     /**
      * Asset belongs to a department
      * 

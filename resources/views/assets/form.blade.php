@@ -16,7 +16,7 @@
         @include('errors/validation')
 
         @if(isset($asset))
-            {!! Form::model($asset, array('action' => ['AssetsController@update', $asset->id])) !!} 
+            {!! Form::model($asset, array('action' => ['AssetsController@update', $asset->id], 'files' => true)) !!} 
             {!! Form::hidden('_method', 'PATCH') !!}
         @else
             {!! Form::open(array('url' => 'assets', 'enctype' => 'multipart/form-data')) !!}
@@ -114,6 +114,25 @@
                 <div class="form-inline">
                     {!! Form::text('location_lat', old('location_lat'), ['class' => 'form-control', 'placeholder' => 'Latitude']) !!}
                     {!! Form::text('location_long', old('location_long'), ['class' => 'form-control', 'placeholder' => 'Longitude']) !!}
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        {!! Form::label('Image') !!} <small><span class="help-inline">(jpg,png)</span></small>
+                        {!! Form::file('image', ['class' => 'form-control']) !!}
+                        @if(isset($asset->image))
+                            <span class="help-block">
+                                Existing image will be replaced if new image is selected.
+                            </span>
+                        @endif
+                    </div>
+                    <div class="col-sm-6">
+                        @if(isset($asset->image))
+                            <img src="{{ $asset->image }}" alt="" height="100" />
+                        @endif
+                    </div>
                 </div>
             </div>
 
