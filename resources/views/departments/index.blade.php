@@ -30,7 +30,7 @@
                             <td>{{ $department->name }}</td>
                             <td>
                                 <a href="/departments/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="/departments/delete/{{ $department->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                <a href="/departments/delete/{{ $department->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     @endforeach

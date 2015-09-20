@@ -36,7 +36,7 @@
                             <td>{{ $employee->ssn }}</td>
                             <td>
                                 <a href="/employees/{{ $employee->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="/employees/delete/{{ $employee->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                <a href="/employees/delete/{{ $employee->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     @endforeach

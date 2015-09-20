@@ -32,7 +32,7 @@
                             <td>{{ $department->label }}</td>
                             <td>
                                 <a href="/roles/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="/roles/delete/{{ $department->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Delete</a>
+                                <a href="/roles/delete/{{ $department->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     @endforeach
