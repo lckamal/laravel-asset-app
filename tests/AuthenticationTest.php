@@ -10,13 +10,13 @@ class AuthenticationTest extends TestCase
     public function show_login_button()
     {
         $this->visit('/')
-             ->see('Login');
+             ->see('Enter');
     }
     /** @test */
     public function test_login_form()
     {
         $this->visit('/auth/login')
-            ->submitForm('Login', ['email' => 'admin@admin.com', 'password' => 'password'])
+            ->submitForm('Sign In', ['email' => 'admin@admin.com', 'password' => 'password'])
             ->see('Welcome!')
             ->onPage('home');
     }

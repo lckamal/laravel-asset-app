@@ -15,7 +15,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
-        'is_admin' => 0,
         'status' => 1,
         'department_id' => factory('App\Department')->create()->id,
         'password' => bcrypt(str_random(10)),
@@ -77,8 +76,6 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
         'ssn' => null,
         'timezone' => $faker->timezone,
         'drivers_license' => null,
-        // 'image' => $faker->imageUrl($width = 640, $height = 480)
-        'image' => null
     ];
 });
 
@@ -97,9 +94,10 @@ $factory->define(App\Asset::class, function (Faker\Generator $faker) {
         'date_acquired' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_disposed' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'purchase_price' => $faker->randomNumber(3),
-        'salvage_value' => 0,
         'location_lat' => $faker->latitude,
         'location_long' => $faker->longitude,
+        // 'image' => $faker->imageUrl($width = 640, $height = 480)
+        'image' => NULL,
         'status' => 'active',
     ];
 });

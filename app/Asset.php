@@ -27,7 +27,6 @@ class Asset extends Model
         'model',
         'serial',
         'purchase_price',
-        'salvage_price',
         'barcode',
         'date_acquired',
         'date_disposed',

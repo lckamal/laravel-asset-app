@@ -57,14 +57,6 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('salvage_value', 'Salvage value:') !!}
-                <div class="input-group">
-                  <div class="input-group-addon">$</div>
-                  {!! Form::text('salvage_value', old('salvage_value'), ['class' => 'form-control']) !!}
-                </div>
-            </div>
-
-            <div class="form-group">
                 {!! Form::label('barcode', 'Barcode:') !!}
                 {!! Form::text('barcode', old('barcode'), ['class' => 'form-control']) !!}
             </div>
