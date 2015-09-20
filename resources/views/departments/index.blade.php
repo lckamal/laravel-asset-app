@@ -38,6 +38,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="box-footer clearfix">
+            {!! $departments->render() !!}
+        </div>
     </div>
     @else
     <div class="alert alert-info">

@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', ['as' => '/', 'uses' => 'PagesController@index']);
-Route::get('/home', ['as' => 'home', 'uses' => 'PagesController@home']);
+Route::get('home', ['as' => 'home', 'uses' => 'PagesController@home']);
 
 // Route::get('/map', ['as' => 'map', 'uses' => 'LocationsController@map']);
 

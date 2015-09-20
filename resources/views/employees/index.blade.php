@@ -44,6 +44,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="box-footer clearfix">
+            {!! $employees->render() !!}
+        </div>
     </div>
     @else
         <div class="alert alert-info">

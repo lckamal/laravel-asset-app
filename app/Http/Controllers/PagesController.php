@@ -12,7 +12,6 @@ class PagesController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index']]);
-        $this->middleware('permission:manage_assets');
         parent::__construct();
     }
     /**

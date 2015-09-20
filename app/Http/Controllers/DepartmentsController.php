@@ -25,7 +25,7 @@ class DepartmentsController extends Controller
      */
     public function index()
     {
-        $departments = Department::all();
+        $departments = Department::paginate(30);
         return View('departments.index', compact('departments'));
     }
 
