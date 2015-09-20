@@ -131,11 +131,19 @@ Breadcrumbs::register('assets.edit', function($breadcrumbs)
     $breadcrumbs->parent('assets.index');
     $breadcrumbs->push('Edit Asset', route('assets.edit'));
 });
+
 // Home > Assets > map
 Breadcrumbs::register('assets.map', function($breadcrumbs)
 {
     $breadcrumbs->parent('assets.index');
     $breadcrumbs->push('Map', route('assets.map'));
+});
+
+// Home > Assets > map
+Breadcrumbs::register('assets.show', function($breadcrumbs)
+{
+    $breadcrumbs->parent('assets.index');
+    $breadcrumbs->push('Detail', route('assets.show'));
 });
 
 // Home > Categories
