@@ -25,7 +25,7 @@ class AssetsController extends Controller
      */
     public function index()
     {
-        $assets = Asset::paginate(30);
+        $assets = Asset::filter()->paginate(30);
         return View('assets.index', compact('assets'));
     }
 

@@ -41,6 +41,47 @@ class Asset extends Model
         'status',
     ];
 
+    /**
+     * scope query with filter options
+     * @param  query $query
+     * @return Query
+     */
+    public static function scopeFilter($query)
+    {
+        if($name = \Request::get('q'))
+        {
+            $query->where('name', 'like', "%{$name}%");
+            $query->orWhere('asset_no', 'like', "%{$name}%");
+            $query->orWhere('model', 'like', "%{$name}%");
+        }
+        
+        if($category_id = \Request::get('category_id'))
+        {
+            $query->where('category_id', '=', $category_id);
+        }
+        
+        if($department_id = \Request::get('department_id'))
+        {
+            $query->where('department_id', '=', $department_id);
+        }
+        
+        if($vendor_id = \Request::get('vendor_id'))
+        {
+            $query->where('vendor_id', '=', $vendor_id);
+        }
+        
+        if($status = \Request::get('status'))
+        {
+            $query->where('status', '=', $status);
+        }
+
+        return $query;
+    }
+    /**
+     * save image to folder and name to db
+     * @param  AssetRequest $request
+     * @return void
+     */
     public function saveImage(AssetRequest $request)
     {
         if(! $request->file('image')) return null;
