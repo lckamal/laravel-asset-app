@@ -8,12 +8,12 @@
 <section class="content">
     @include('assets.partials.tabs', ['active' => 'list'])
 
-    @if(count($assets))
-    <div class="box">
+    <div class="box box-info">
         <div class="box-header with-border">
             @include('assets.partials.filter')
         </div>
-        <div class="box-body table-responsive no-padding">
+        <div class="box-body table-responsive">
+            @if(count($assets))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -45,20 +45,16 @@
 
                 </tbody>
             </table>
+            @else
+            <div class="alert alert-info">
+                There are no assets. <a href="/assets/create">Add Asset</a>
+            </div>
+            @endif
         </div>
         <div class="box-footer clearfix">
             {!! $assets->render() !!}
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no assets added. <a href="/assets/create">Add Asset</a>
-        </div>
-    @endif
+    
 </section>
-<style type="text/css">
-    .box-search select{
-        max-width:160px;
-    }
-</style>
 @stop

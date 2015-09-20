@@ -9,12 +9,13 @@
     
     @include('assets.partials.tabs', ['active' => 'grid'])
 
-    @if(count($assets))
-    <div class="box">
+    
+    <div class="box box-info">
         <div class="box-header with-border">
           @include('assets.partials.filter')
         </div>
         <div class="box-body">
+            @if(count($assets))
             <div class="row">
                 @foreach($assets as $asset)
                 <div class="col-sm-4">
@@ -36,17 +37,17 @@
                 </div>
                 @endforeach
             </div>
+            @else
+                <div class="alert alert-info">
+                    There are no assets added. <a href="/assets/create">Add Asset</a>
+                </div>
+            @endif
 
         </div>
         <div class="box-footer clearfix">
             {!! $assets->render() !!}
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no assets added. <a href="/assets/create">Add Asset</a>
-        </div>
-    @endif
 </section>
 <style type="text/css">
     .asset-grid{

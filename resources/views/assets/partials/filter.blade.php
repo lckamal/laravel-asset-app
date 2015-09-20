@@ -6,7 +6,7 @@
     <form action="" method="get" class="form-inline" role="form">
                        
         <div class="form-group">
-            {!! Form::text('q', Request::get('q'), ['class' => 'form-control', 'placeholder' => 'Search here..']) !!}
+            {!! Form::text('q', Request::get('q'), ['class' => 'form-control', 'placeholder' => 'Search by Name, Asset no and Model..']) !!}
         </div>
         <div class="form-group">
             {!! Form::select('department_id', array('' => 'Department') + (array)$departments->lists('name', 'id')->all(), Request::get('department_id'), ['class' => 'form-control chosen-input']) !!}
@@ -21,7 +21,7 @@
             {!! Form::select('status', array('' => 'Status', 'active' => 'Active', 'inactive' => 'Inactive', 'repair' => 'In repair'), Request::get('status'), ['class' => 'form-control chosen-input']) !!}
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Search</button>
         <a href="/assets" class="btn btn-default">Reset</a>
       </form>
 </div>
