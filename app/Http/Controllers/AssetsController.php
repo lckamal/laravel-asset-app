@@ -36,7 +36,7 @@ class AssetsController extends Controller
      */
     public function grid()
     {
-        $assets = Asset::paginate(30);
+        $assets = Asset::filter()->paginate(30);
         return View('assets.grid', compact('assets'));
     }
 
