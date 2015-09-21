@@ -39,6 +39,21 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     /**
+     * scope query with filter options
+     * @param  query $query
+     * @return Query
+     */
+    public static function scopeFilter($query)
+    {
+        if($name = \Request::get('q'))
+        {
+            $query->where('name', 'like', "%{$name}%");
+            $query->orWhere('email', 'like', "%{$name}%");
+        }
+        return $query;
+    }
+
+    /**
      * User belongs to a department
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

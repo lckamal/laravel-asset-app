@@ -6,15 +6,15 @@
   {!! Breadcrumbs::render('employees.index') !!}
 </section>
 <section class="content">
-    @if(count($employees))
     <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Manage Employees</h3>
+            @include('partials.filter', ['resetUrl' => '/employees'])
           <div class="box-tools">
             <a href="/employees/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Employee</a>
           </div>
         </div>
-        <div class="box-body table-responsive no-padding">
+        <div class="box-body table-responsive">
+            @if(count($employees))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -43,15 +43,15 @@
 
                 </tbody>
             </table>
+            @else
+                <div class="alert alert-info">
+                    There are no employees added. <a href="/employees/create">Add Employee</a>
+                </div>
+            @endif
         </div>
         <div class="box-footer clearfix">
             {!! $employees->render() !!}
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no employees added. <a href="/employees/create">Add Employee</a>
-        </div>
-    @endif
 </section>
 @stop

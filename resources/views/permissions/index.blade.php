@@ -6,15 +6,15 @@
   {!! Breadcrumbs::render('permissions.index') !!}
 </section>
 <section class="content">
-    @if(count($permissions))
     <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Manage Permissions</h3>
+          @include('partials.filter', ['resetUrl' => '/permissions'])
           <div class="box-tools">
             <a href="/permissions/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Permission</a>
           </div>
         </div>
         <div class="box-body table-responsive no-padding">
+            @if(count($permissions))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -39,12 +39,12 @@
 
                 </tbody>
             </table>
+            @else
+                <div class="alert alert-info">
+                    There are no permissions added. <a href="/permissions/create">Add Permissions</a>
+                </div>
+            @endif
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no permissions added. <a href="/permissions/create">Add Permissions</a>
-        </div>
-    @endif
 </section>
 @stop

@@ -20,6 +20,20 @@ class Role extends Model
      */
     protected $fillable = ['name', 'label'];
 
+    /**
+     * scope query with filter options
+     * @param  query $query
+     * @return Query
+     */
+    public static function scopeFilter($query)
+    {
+        if($name = \Request::get('q'))
+        {
+            $query->where('name', 'like', "%{$name}%");
+        }
+        return $query;
+    }
+    
     public function permissions()
     {
         return $this->belongsToMany(Permission::class);

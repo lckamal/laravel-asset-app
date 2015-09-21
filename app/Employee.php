@@ -38,4 +38,22 @@ class Employee extends Model
         'timezone',
         'drivers_license',
     ];
+
+    /**
+     * scope query with filter options
+     * @param  query $query
+     * @return Query
+     */
+    public static function scopeFilter($query)
+    {
+        if($name = \Request::get('q'))
+        {
+            $query->where('first_name', 'like', "%{$name}%");
+            $query->orWhere('last_name', 'like', "%{$name}%");
+            $query->orWhere('email', 'like', "%{$name}%");
+            $query->orWhere('employee_number', 'like', "%{$name}%");
+        }
+
+        return $query;
+    }
 }

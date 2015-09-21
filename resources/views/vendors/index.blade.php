@@ -6,15 +6,15 @@
   {!! Breadcrumbs::render('vendors.index') !!}
 </section>
 <section class="content">
-    @if(count($vendors))
     <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Manage Vendors</h3>
+          @include('partials.filter', ['resetUrl' => '/vendors'])
           <div class="box-tools">
             <a href="/vendors/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Vendor</a>
           </div>
         </div>
         <div class="box-body table-responsive no-padding">
+            @if(count($vendors))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -37,15 +37,16 @@
 
                 </tbody>
             </table>
+            @else
+                <div class="alert alert-info">
+                    There are no vendors added. <a href="/vendors/create">Add Vendor</a>
+                </div>
+            @endif
+            
         </div>
         <div class="box-footer clearfix">
             {!! $vendors->render() !!}
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no vendors added. <a href="/vendors/create">Add Vendor</a>
-        </div>
-    @endif
 </section>
 @stop

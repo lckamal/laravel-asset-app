@@ -6,15 +6,15 @@
   {!! Breadcrumbs::render('categories.index') !!}
 </section>
 <section class="content">
-    @if(count($categories))
     <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Manage Categories</h3>
+          @include('partials.filter', ['resetUrl' => '/categories'])
           <div class="box-tools">
             <a href="/categories/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Category</a>
           </div>
         </div>
         <div class="box-body table-responsive no-padding">
+            @if(count($categories))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -39,15 +39,15 @@
 
                 </tbody>
             </table>
+            @else
+                <div class="alert alert-info">
+                    There are no categories added. <a href="/categories/create">Add Category</a>
+                </div>
+            @endif
         </div>
         <div class="box-footer clearfix">
             {!! $categories->render() !!}
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no categories added. <a href="/categories/create">Add Category</a>
-        </div>
-    @endif
 </section>
 @stop

@@ -19,4 +19,18 @@ class Category extends Model
      * @var array
      */
     protected $fillable = ['name', 'description'];
+
+    /**
+     * scope query with filter options
+     * @param  query $query
+     * @return Query
+     */
+    public static function scopeFilter($query)
+    {
+        if($name = \Request::get('q'))
+        {
+            $query->where('name', 'like', "%{$name}%");
+        }
+        return $query;
+    }
 }

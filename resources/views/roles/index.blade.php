@@ -6,15 +6,15 @@
   {!! Breadcrumbs::render('roles.index') !!}
 </section>
 <section class="content">
-    @if(count($roles))
     <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Manage Roles</h3>
+          @include('partials.filter', ['resetUrl' => '/roles'])
           <div class="box-tools">
             <a href="/roles/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Role</a>
           </div>
         </div>
         <div class="box-body table-responsive no-padding">
+        @if(count($roles))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -39,12 +39,12 @@
 
                 </tbody>
             </table>
+        @else
+            <div class="alert alert-info">
+                There are no roles added. <a href="/roles/create">Add Roles</a>
+            </div>
+        @endif
         </div>
     </div>
-    @else
-        <div class="alert alert-info">
-            There are no roles added. <a href="/roles/create">Add Roles</a>
-        </div>
-    @endif
 </section>
 @stop
