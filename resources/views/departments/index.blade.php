@@ -6,12 +6,10 @@
   {!! Breadcrumbs::render('departments.index') !!}
 </section>
 <section class="content">
-    <div class="box">
+    @include('departments.tabs', ['active' => 'list'])
+    <div class="box box-info">
         <div class="box-header with-border">
           @include('partials.filter', ['resetUrl' => '/departments'])
-          <div class="box-tools">
-            <a class="btn btn-primary btn-sm" href="/departments/create"><i class="fa fa-plus"></i> Add Department</a>
-          </div>
         </div>
         <div class="box-body table-responsive no-padding">
             @if(count($departments))
@@ -19,7 +17,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Department Name</th>
+                        <th>Name</th>
+                        <th>location</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -28,7 +27,9 @@
                         <tr>
                             <td>{{ $department->id }}</td>
                             <td>{{ $department->name }}</td>
+                            <td>{{ $department->latitude }}, {{ $department->longitude }}</td>
                             <td>
+                                <a href="/floors?department_id={{ $department->id }}" class="btn btn-primary btn-xs">Floors</a>
                                 <a href="/departments/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
                                 <a href="/departments/delete/{{ $department->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>

@@ -15,6 +15,7 @@ class Asset extends Model
     protected $table = 'assets';
 
     protected $dates = ['date_acquired', 'date_disposed'];
+    
     /**
      * The attributes that are mass assignable.
      *

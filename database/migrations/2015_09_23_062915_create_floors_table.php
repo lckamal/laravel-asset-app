@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepartmentTable extends Migration
+class CreateFloorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateDepartmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('floors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('department_id')->unsigned();
             $table->string('name');
-            $table->decimal('latitude',10,6)->nullable();
-            $table->decimal('longitude',10,6)->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDepartmentTable extends Migration
      */
     public function down()
     {
-        Schema::drop('departments');
+        Schema::drop('floors');
     }
 }

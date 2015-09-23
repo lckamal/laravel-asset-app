@@ -4,7 +4,7 @@
 
 <div class="box-search">
     <form action="" method="get" class="form-inline" role="form">
-                       
+        {!! Form::hidden('view', $view) !!}
         <div class="form-group">
             {!! Form::text('q', Request::get('q'), ['class' => 'form-control', 'placeholder' => 'Search by Name, Asset no and Model..']) !!}
         </div>
@@ -22,6 +22,6 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Search</button>
-        <a href="/assets" class="btn btn-default">Reset</a>
+        <a href="/assets?view={{$view}}" class="btn btn-default">Reset</a>
       </form>
 </div>

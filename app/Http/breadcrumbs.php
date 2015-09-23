@@ -13,14 +13,14 @@ Breadcrumbs::register('users.index', function($breadcrumbs)
     $breadcrumbs->push('Users', route('users.index'));
 });
 
-// Home > Users
+// Home > Users > Create
 Breadcrumbs::register('users.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('users.index');
     $breadcrumbs->push('Create User', route('users.create'));
 });
 
-// Home > Users
+// Home > Users > Edit
 Breadcrumbs::register('users.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('users.index');
@@ -34,14 +34,14 @@ Breadcrumbs::register('roles.index', function($breadcrumbs)
     $breadcrumbs->push('Roles', route('roles.index'));
 });
 
-// Home > Roles
+// Home > Roles > Create
 Breadcrumbs::register('roles.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('roles.index');
     $breadcrumbs->push('Create Role', route('roles.create'));
 });
 
-// Home > Roles
+// Home > Roles > Edit
 Breadcrumbs::register('roles.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('roles.index');
@@ -55,14 +55,14 @@ Breadcrumbs::register('permissions.index', function($breadcrumbs)
     $breadcrumbs->push('Permissions', route('permissions.index'));
 });
 
-// Home > Permissions
+// Home > Permissions > Create
 Breadcrumbs::register('permissions.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('permissions.index');
     $breadcrumbs->push('Create Permission', route('permissions.create'));
 });
 
-// Home > Permissions
+// Home > Permissions > Edit
 Breadcrumbs::register('permissions.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('permissions.index');
@@ -76,18 +76,39 @@ Breadcrumbs::register('departments.index', function($breadcrumbs)
     $breadcrumbs->push('Departments', route('departments.index'));
 });
 
-// Home > Departments
+// Home > Departments > Create
 Breadcrumbs::register('departments.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('departments.index');
     $breadcrumbs->push('Create Department', route('departments.create'));
 });
 
-// Home > Departments
+// Home > Departments > Edit
 Breadcrumbs::register('departments.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('departments.index');
     $breadcrumbs->push('Edit Department', route('departments.edit'));
+});
+
+// Home > Floors
+Breadcrumbs::register('floors.index', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Floors', route('floors.index'));
+});
+
+// Home > Floors > Create
+Breadcrumbs::register('floors.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('floors.index');
+    $breadcrumbs->push('Create Floor', route('floors.create'));
+});
+
+// Home > Floors > Edit
+Breadcrumbs::register('floors.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('floors.index');
+    $breadcrumbs->push('Edit Floor', route('floors.edit'));
 });
 
 // Home > Employees
@@ -97,14 +118,14 @@ Breadcrumbs::register('employees.index', function($breadcrumbs)
     $breadcrumbs->push('Employees', route('employees.index'));
 });
 
-// Home > Employees
+// Home > Employees > Create
 Breadcrumbs::register('employees.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('employees.index');
     $breadcrumbs->push('Create Employee', route('employees.create'));
 });
 
-// Home > Employees
+// Home > Employees > Edit
 Breadcrumbs::register('employees.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('employees.index');
@@ -118,14 +139,14 @@ Breadcrumbs::register('assets.index', function($breadcrumbs)
     $breadcrumbs->push('Assets', route('assets.index'));
 });
 
-// Home > Assets
+// Home > Assets > Create
 Breadcrumbs::register('assets.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('assets.index');
     $breadcrumbs->push('Create Asset', route('assets.create'));
 });
 
-// Home > Assets
+// Home > Assets > Edit
 Breadcrumbs::register('assets.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('assets.index');
@@ -153,14 +174,14 @@ Breadcrumbs::register('categories.index', function($breadcrumbs)
     $breadcrumbs->push('Categories', route('categories.index'));
 });
 
-// Home > Categories
+// Home > Categories > Create
 Breadcrumbs::register('categories.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('categories.index');
     $breadcrumbs->push('Create Category', route('categories.create'));
 });
 
-// Home > Categories
+// Home > Categories > Edit
 Breadcrumbs::register('categories.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('categories.index');
@@ -174,14 +195,14 @@ Breadcrumbs::register('vendors.index', function($breadcrumbs)
     $breadcrumbs->push('Vendors', route('vendors.index'));
 });
 
-// Home > Vendors
+// Home > Vendors > Create
 Breadcrumbs::register('vendors.create', function($breadcrumbs)
 {
     $breadcrumbs->parent('vendors.index');
     $breadcrumbs->push('Create Vendor', route('vendors.create'));
 });
 
-// Home > Vendors
+// Home > Vendors > Edit
 Breadcrumbs::register('vendors.edit', function($breadcrumbs)
 {
     $breadcrumbs->parent('vendors.index');

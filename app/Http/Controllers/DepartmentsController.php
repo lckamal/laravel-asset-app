@@ -26,7 +26,9 @@ class DepartmentsController extends Controller
     public function index()
     {
         $departments = Department::filter()->paginate(30);
-        return View('departments.index', compact('departments'));
+        $view = \Request::get('view', 'list');
+        $loadview = $view == 'map' ? 'departments.map' : 'departments.index';
+        return View($loadview, compact('departments'));
     }
 
     /**
@@ -49,12 +51,12 @@ class DepartmentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:departments|max:255'
+            'name' => 'required|unique:departments|max:255',
+            'latitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
+            'longitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
         ]);
 
-        $dept = new Department;
-        $dept->name = $request->name;
-        $dept->save();
+        (new Department($request->all()))->save();
 
         flash()->success('Success!', 'Department created successfully');
 
@@ -95,13 +97,15 @@ class DepartmentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|unique:departments,id,'.$id.'|max:255'
+            'name' => 'required|unique:departments,id,'.$id.'|max:255',
+            'latitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
+            'longitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
         ]);
 
         $department = Department::findOrFail($id);
         $department->update($request->all());
         
-        flash()->success('Success!', 'Departmanet name updated!');
+        flash()->success('Success!', 'Department updated successfully!');
         return redirect('departments');
     }
 

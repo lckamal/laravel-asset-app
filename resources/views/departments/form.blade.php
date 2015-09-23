@@ -22,6 +22,15 @@
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                 </div>
 
+
+                <div class="form-group">
+                    {!! Form::label('latitude', 'Location:') !!} <span class="text-danger">*</span>
+                    <div class="form-inline">
+                        {!! Form::text('latitude', old('latitude'), ['class' => 'form-control', 'placeholder' => 'Latitude']) !!}
+                        {!! Form::text('longitude', old('longitude'), ['class' => 'form-control', 'placeholder' => 'Longitude']) !!}
+                    </div>
+                </div>
+
                 <hr>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Save</button>

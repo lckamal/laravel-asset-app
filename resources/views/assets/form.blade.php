@@ -100,14 +100,6 @@
                 {!! Form::label('employee_id', 'Employee:') !!} <span class="text-danger">*</span>
                 {!! Form::select('employee_id', array('' => 'Select Employee') + (array)$employees->lists('first_name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
             </div>
-
-            <div class="form-group">
-                {!! Form::label('location_lat', 'Location:') !!} <span class="text-danger">*</span>
-                <div class="form-inline">
-                    {!! Form::text('location_lat', old('location_lat'), ['class' => 'form-control', 'placeholder' => 'Latitude']) !!}
-                    {!! Form::text('location_long', old('location_long'), ['class' => 'form-control', 'placeholder' => 'Longitude']) !!}
-                </div>
-            </div>
     
             <div class="form-group">
                 <div class="row">

@@ -20,8 +20,6 @@
                         <th>ID</th>
                         <th>Asset No.</th>
                         <th>Name</th>
-                        <th>Department</th>
-                        <th>location</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -33,7 +31,6 @@
                             <td>{{ $asset->asset_no }}</td>
                             <td>{{ $asset->name }}</td>
                             <td>{{ $asset->department->name }}</td>
-                            <td>{{ $asset->location_lat }} {{ $asset->location_long }}</td>
                             <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>
                                 <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View</a>

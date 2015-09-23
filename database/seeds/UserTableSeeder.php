@@ -68,6 +68,10 @@ class UserTableSeeder extends Seeder
                 'name' => 'manage_vendors',
                 'label' => 'Manage vendors'
             ],
+            [
+                'name' => 'manage_floors',
+                'label' => 'Manage floors'
+            ],
         ]);
 
         DB::table('role_user')->insert([

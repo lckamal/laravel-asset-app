@@ -2,11 +2,11 @@
 
 @section('content')
 <section class="content-header">
-  <h1>Assets</h1>
-  {!! Breadcrumbs::render('assets.map') !!}
+  <h1>Departments</h1>
+  {!! Breadcrumbs::render('departments.index') !!}
 </section>
 <section class="content">
-    @include('assets.partials.tabs', ['active' => 'map'])
+    @include('departments.tabs', ['active' => 'map'])
     <div class="box box-info">    
         <div id="map"></div>
     </div>
@@ -19,10 +19,10 @@
         var bounds = new google.maps.LatLngBounds();
         var infowindow = new google.maps.InfoWindow();    
 
-        @foreach($assets as $item)
+        @foreach($departments as $item)
 
           var marker = new google.maps.Marker({
-            position: new google.maps.LatLng({{$item->location_lat}},{{$item->location_long}}),
+            position: new google.maps.LatLng({{$item->latitude}},{{$item->longitude}}),
             map: map,
             title: "{{$item->name}}"
           });
@@ -32,7 +32,7 @@
           var i = {{$item->id}};
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-              infowindow.setContent("<b>{{$item->name}}</b><br/>Asset No. {{$item->asset_no}}<br/>{{$item->description}}");
+              infowindow.setContent("<b>{{$item->name}}</b><br/>No. floor: {{ $item->floors()->count() }}<br/>No. Assets: {{ $item->assets()->count() }}");
               infowindow.open(map, marker);
             }
           })(marker, i));

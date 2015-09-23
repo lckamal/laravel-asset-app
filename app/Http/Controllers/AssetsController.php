@@ -26,18 +26,9 @@ class AssetsController extends Controller
     public function index()
     {
         $assets = Asset::filter()->paginate(30);
-        return View('assets.index', compact('assets'));
-    }
-
-    /**
-     * Display a listing of the resource with grid view.
-     *
-     * @return Response
-     */
-    public function grid()
-    {
-        $assets = Asset::filter()->paginate(30);
-        return View('assets.grid', compact('assets'));
+        $view = \Request::get('view', 'list');
+        $loadview = $view == 'grid' ? 'assets.grid' : 'assets.index';
+        return View($loadview, compact('assets','view'));
     }
 
     /**
@@ -62,19 +53,8 @@ class AssetsController extends Controller
         $asset = new Asset($request->all());
         $asset->save()->saveImage();
         
-
         flash()->success('Success!', 'Asset has been created!');
         return redirect('assets');
-    }
-
-    /**
-     * display assets with map view
-     * @return Response
-     */
-    public function map()
-    {
-        $assets = Asset::all();
-        return View('assets.map', compact('assets'));
     }
 
     /**

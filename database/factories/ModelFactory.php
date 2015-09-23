@@ -16,7 +16,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->email,
         'status' => 1,
-        'department_id' => factory('App\Department')->create()->id,
+        'department_id' => App\Department::orderByRaw("RAND()")->first()->id,
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
@@ -40,6 +40,8 @@ $factory->define(App\Role::class, function (Faker\Generator $faker) {
 $factory->define(App\Department::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->company,
+        'latitude' => $faker->latitude,
+        'longitude' => $faker->longitude,
     ];
 });
 
@@ -83,10 +85,10 @@ $factory->define(App\Asset::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'asset_no' => $faker->randomNumber(4),
-        'department_id' => factory('App\Department')->create()->id,
-        'category_id' => factory('App\Category')->create()->id,
-        'employee_id' => factory('App\Employee')->create()->id,
-        'vendor_id' => factory('App\Vendor')->create()->id,
+        'department_id' => App\Department::orderByRaw("RAND()")->first()->id,
+        'category_id' => App\Category::orderByRaw("RAND()")->first()->id,
+        'employee_id' => App\Employee::orderByRaw("RAND()")->first()->id,
+        'vendor_id' => App\Vendor::orderByRaw("RAND()")->first()->id,
         'description' => $faker->paragraph,
         'model' => $faker->word,
         'serial' => $faker->randomLetter,
@@ -94,10 +96,16 @@ $factory->define(App\Asset::class, function (Faker\Generator $faker) {
         'date_acquired' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_disposed' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'purchase_price' => $faker->randomNumber(3),
-        'location_lat' => $faker->latitude,
-        'location_long' => $faker->longitude,
         // 'image' => $faker->imageUrl($width = 640, $height = 480)
         'image' => NULL,
         'status' => 'active',
+    ];
+});
+
+$factory->define(App\Floor::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'department_id' => App\Department::orderByRaw("RAND()")->first()->id,
+        'image' => NULL,
     ];
 });

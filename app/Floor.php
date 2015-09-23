@@ -4,21 +4,25 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Department extends Model
+class Floor extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'departments';
+    protected $table = 'floors';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name','latitude','longitude'];
+    protected $fillable = [
+        'name',
+        'department_id',
+        'image',
+    ];
 
     /**
      * scope query with filter options
@@ -32,26 +36,21 @@ class Department extends Model
             $query->where('name', 'like', "%{$name}%");
         }
 
+        if($department_id = \Request::get('department_id'))
+        {
+            $query->where('department_id', '=', "{$department_id}");
+        }
+
         return $query;
     }
 
     /**
-     * Department has many floors
+     * Asset belongs to a department
      * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function floors()
+    public function department()
     {
-        return $this->hasMany('App\Floor');
-    }
-
-    /**
-     * Department has many assets
-     * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function assets()
-    {
-        return $this->hasMany('App\Asset');
+        return $this->belongsTo('App\Department');
     }
 }
