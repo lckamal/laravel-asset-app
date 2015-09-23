@@ -8,11 +8,11 @@
 <section class="content">
     @include('departments.tabs', ['active' => 'map'])
     <div class="box box-info">    
-        <div id="map"></div>
+        <div id="map-canvas"></div>
     </div>
     <script>
     function initMap() {
-        window.map = new google.maps.Map(document.getElementById('map'), {
+        window.map = new google.maps.Map(document.getElementById('map-canvas'), {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
@@ -31,8 +31,20 @@
           bounds.extend(marker.position);
           var i = {{$item->id}};
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-              infowindow.setContent("<b>{{$item->name}}</b><br/>No. floor: {{ $item->floors()->count() }}<br/>No. Assets: {{ $item->assets()->count() }}");
+            return function(infoWindowContent) {
+                var infoWindowContent = '<h3 class="iw-title">{{$item->name}}</h3>' +
+                    '<table class="table table-stripped">' +
+                      '<tr>' +
+                          '<td>Floors:</td>' + 
+                          '<td>{{ $item->floors()->count() }}</td>' +
+                          '<td><a class="btn btn-xs btn-link" href="/floors?department_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
+                      '</tr><tr>' +
+                        '<td>Assets:</td>' +
+                        '<td>{{ $item->assets()->count() }}</td>' +
+                        '<td><a class="btn btn-xs btn-link" href="/assets?department_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
+                      '</tr>' +
+                    '</table>';
+              infowindow.setContent(infoWindowContent);
               infowindow.open(map, marker);
             }
           })(marker, i));
@@ -61,9 +73,18 @@
 
 </section>
 <style>
-      #map {
-        width:100%;
-        height: 550px;
-      }
-    </style>
+#map-canvas {
+    margin: 0;
+    padding: 0;
+    height: 550px;
+    max-width: none;
+}
+#map-canvas .iw-title {
+    font-size:20px;
+    margin:5px 0;
+}
+#map-canvas hr{
+    margin:5px 0;
+}
+</style>
 @stop
