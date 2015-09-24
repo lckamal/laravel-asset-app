@@ -37,6 +37,7 @@ class AssetRequest extends Request
             'date_disposed' => '',
             'category_id' => 'required',
             'department_id' => 'required',
+            'floor_id' => 'required',
             'vendor_id' => 'required',
             'employee_id' => 'required',
             'image' => 'mimes:png,jpeg,jpg',
