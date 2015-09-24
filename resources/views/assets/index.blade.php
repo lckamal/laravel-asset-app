@@ -17,9 +17,10 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Asset No.</th>
                         <th>Name</th>
+                        <th>Department</th>
+                        <th>Floor</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -27,10 +28,10 @@
                 <tbody>
                     @foreach($assets as $asset)
                         <tr>
-                            <td>{{ $asset->id }}</td>
                             <td>{{ $asset->asset_no }}</td>
                             <td>{{ $asset->name }}</td>
                             <td>{{ $asset->department->name }}</td>
+                            <td>{{ isset($asset->floor->name) ? $asset->floor->name : '' }}</td>
                             <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>
                                 <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View</a>

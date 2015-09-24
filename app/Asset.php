@@ -33,6 +33,7 @@ class Asset extends Model
         'date_disposed',
         'category_id',
         'department_id',
+        'floor_id',
         'vendor_id',
         'employee_id',
         'location_lat',
@@ -155,5 +156,15 @@ class Asset extends Model
     public function employee()
     {
         return $this->belongsTo('App\Employee');
+    }
+
+    /**
+     * Asset belongs to a floor
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function floor()
+    {
+        return $this->belongsTo('App\Floor');
     }
 }

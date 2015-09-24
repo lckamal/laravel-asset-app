@@ -20,6 +20,7 @@ elixir(function(mix) {
             './resources/assets/plugins/input-mask/jquery.inputmask.js',
             './resources/assets/plugins/input-mask/jquery.inputmask.date.extensions.js',
             './resources/assets/plugins/input-mask/jquery.inputmask.extensions.js',
+            './resources/assets/plugins/chartjs/Chart.min.js',
     		'libs/chosen.jquery.min.js',
     		'libs/sweetalert-dev.js',
             'libs/summernote.min.js',

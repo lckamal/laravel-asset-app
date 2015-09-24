@@ -112,4 +112,14 @@ class AssetsController extends Controller
         flash()->success('Success!', 'Asset has been deleted!');
         return redirect('assets');
     }
+
+    /**
+     * response dropdown of given department
+     * @return response
+     */
+    public function dropdown()
+    {
+        $department_id = \Request::get('department_id');
+        return \App\Floor::where('department_id', $department_id)->lists('name','id');
+    }
 }

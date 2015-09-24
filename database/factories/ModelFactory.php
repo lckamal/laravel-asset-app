@@ -82,16 +82,20 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Asset::class, function (Faker\Generator $faker) {
+    $department_id = App\Department::orderByRaw("RAND()")->first()->id;
+    $floor = App\Floor::where('department_id',$department_id)->orderByRaw("RAND()")->first();
+    $floor_id = isset($floor->id) ? $floor->id : 0;
     return [
         'name' => $faker->name,
         'asset_no' => $faker->randomNumber(4),
-        'department_id' => App\Department::orderByRaw("RAND()")->first()->id,
+        'department_id' => $department_id,
+        'floor_id' => $floor_id,
         'category_id' => App\Category::orderByRaw("RAND()")->first()->id,
         'employee_id' => App\Employee::orderByRaw("RAND()")->first()->id,
         'vendor_id' => App\Vendor::orderByRaw("RAND()")->first()->id,
         'description' => $faker->paragraph,
-        'model' => $faker->word,
-        'serial' => $faker->randomLetter,
+        'model' => $faker->randomNumber(9),
+        'serial' => $faker->randomNumber(7),
         'barcode' => $faker->ean13,
         'date_acquired' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'date_disposed' => $faker->date($format = 'Y-m-d', $max = 'now'),

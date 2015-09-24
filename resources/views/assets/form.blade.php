@@ -92,6 +92,11 @@
             </div>
 
             <div class="form-group">
+                {!! Form::label('floor_id', 'Floor:') !!} <span class="text-danger">*</span>
+                {!! Form::select('floor_id', array('' => 'Select Floor'), null, ['class' => 'form-control chosen-input']) !!}
+            </div>
+
+            <div class="form-group">
                 {!! Form::label('vendor_id', 'Vendor:') !!} <span class="text-danger">*</span>
                 {!! Form::select('vendor_id', array('' => 'Select Vendor') + (array)$vendors->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
             </div>
@@ -134,4 +139,25 @@
         {!! Form::close() !!}
     </div>
 </section>
+@stop
+@section('scripts.footer')
+<script type="text/javascript">
+    var selected_floor_id = {!! isset($asset->floor_id) ? $asset->floor_id : '' !!};
+    jQuery(document).ready(function($){
+        $('[name="department_id"]').change(function(){
+            $.get("{{ url('assets/dropdown')}}", { department_id: $(this).val() }, function(data) {
+                var floor_id = $('[name="floor_id"]');
+                floor_id.empty();
+                floor_id.append("<option value=''>Select Floor</option>");
+                $.each(data, function(index, value) {
+                    var selected = (index == selected_floor_id) ? "selected='selected'" : "";
+                    floor_id.append("<option value='"+ index +"' "+ selected +">" + value + "</option>");
+                });
+                floor_id.trigger("chosen:updated");
+            });
+        }).change();
+
+        $('[name="floor_id"]').val();
+    });
+</script>
 @stop

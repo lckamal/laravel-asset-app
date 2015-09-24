@@ -20,6 +20,7 @@ Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 Route::resource('floors', 'FloorsController');
 Route::get('floors/delete/{id}', 'FloorsController@destroy');
 
+Route::resource('assets/dropdown', 'AssetsController@dropdown');
 Route::resource('assets', 'AssetsController');
 Route::get('assets/delete/{id}', 'AssetsController@destroy');
 
@@ -40,7 +41,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-
 // Route::get('users', ['middleware' => 'acl:manage_users', function()
 // {
 //     return redirect('/home');

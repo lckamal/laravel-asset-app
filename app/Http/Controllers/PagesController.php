@@ -29,7 +29,10 @@ class PagesController extends Controller
         $stats['employees'] = \App\Employee::count();
         $stats['assets'] = \App\Asset::count();
         $stats['users'] = \App\User::count();
+        $stats['categories'] = \App\Category::count();
         $stats['vendors'] = \App\Vendor::count();
+        $stats['departments'] = \App\Department::count();
+        $stats['departments_data'] = \App\Department::all();
 
         return View('pages.dashboard', compact('stats'));
     }
