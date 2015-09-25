@@ -13,8 +13,9 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="img-responsive" src="{{$asset->image}}" alt="{{$asset->name}}">
-              <h3 class="profile-username text-center">{{ $asset->name }}</h3>
+            @if($asset->image)
+              <img class="img-responsive" src="{{ $asset->image}}" alt="{{$asset->name}}">
+            @endif
               <p class="text-muted text-center">Model: {{ $asset->model }}</p>
 
               <ul class="list-group list-group-unbordered">
@@ -52,7 +53,7 @@
                             </tr>
                             <tr>
                                 <td><b>Department</b></td>
-                                <td>{{$asset->department->name}}</td>
+                                <td>{{$asset->department->name}} {{ isset($asset->floor->name) ? ', '.$asset->floor->name : ''}}</td>
                             </tr>
                             <tr>
                                 <td><b>Vendor</b></td>
@@ -64,54 +65,9 @@
                             </tr>
                         </table>
                     </div>
-                    @if($asset->location_lat && $asset->location_long)
-                    <hr/>
-                    <div id="map"></div>
-                    @endif
                 </div>
             </div>
         </div>
     </div>
-    
-    @if($asset->location_lat && $asset->location_long)
-    <script>
-    function initMap() {
-        
-        var uluru = {lat: {{$asset->location_lat}}, lng: {{$asset->location_long}} };
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: uluru
-        });
-        var infowindow = new google.maps.InfoWindow({
-            content: "<b>{{$asset->name}}</b><br/>Asset No. {{$asset->asset_no}}<br/>{{$asset->description}}"
-        });
-
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            title: "{{$asset->name}}"
-        });
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-        });
-
-    }
-    
-    function loadScript() {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initMap';
-        document.body.appendChild(script);
-    }
-
-    window.onload = loadScript;
-    </script>
-    @endif
 </section>
-<style>
-      #map {
-        width:100%;
-        height: 350px;
-      }
-    </style>
 @stop

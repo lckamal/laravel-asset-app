@@ -26,6 +26,8 @@ class AssetsController extends Controller
     public function index()
     {
         $assets = Asset::filter()->paginate(30);
+        $assets->appends(array_filter(\Request::all()));
+
         $view = \Request::get('view', 'list');
         $loadview = $view == 'grid' ? 'assets.grid' : 'assets.index';
         return View($loadview, compact('assets','view'));
