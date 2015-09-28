@@ -1,38 +1,33 @@
 @extends('layout')
 @section('content')
 <section class="content-header">
-  <h1>Floors</h1>
+  <h1>Floor {{ $floor->name ? '&raquo; ' . $floor->name : '' }}</h1>
   {!! Breadcrumbs::render('floors.index') !!}
 </section>
 <section class="content">
     <div class="box">
         <div class="box-header with-border">
-          @include('floors.partials.filter', ['resetUrl' => '/floors'])
-          <div class="box-tools">
-            <a class="btn btn-primary btn-sm" href="/floors/create"><i class="fa fa-plus"></i> Add Floor</a>
-          </div>
+          Department: {{ $floor->department->name }}
         </div>
         <div class="box-body table-responsive no-padding">
-            @if(count($floors))
+            @if(count($assets))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Department</th>
+                        <th>Model</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($floors as $floor)
+                    @foreach($assets as $asset)
                         <tr>
-                            <td>{{ $floor->id }}</td>
-                            <td>{{ $floor->name }}</td>
-                            <td>{{ $floor->department->name }}</td>
+                            <td>{{ $asset->id }}</td>
+                            <td>{{ $asset->name }}</td>
+                            <td>{{ $asset->model }}</td>
                             <td>
-                                <a href="/floors/{{ $floor->id }}" class="btn btn-primary btn-xs">Assets</a>
-                                <a href="/floors/{{ $floor->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="/floors/delete/{{ $floor->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
+                                <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View Detail</a>
                             </td>
                         </tr>
                     @endforeach
@@ -46,7 +41,7 @@
             @endif
         </div>
         <div class="box-footer clearfix">
-            {!! $floors->render() !!}
+            <?php /* ?>{!! $assets->render() !!}<?php */ ?>
         </div>
     </div>
 </section>

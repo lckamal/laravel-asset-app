@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Image;
 use App\Http\Requests\AssetRequest;
 use Illuminate\Database\Eloquent\Model;
 
@@ -86,16 +87,22 @@ class Asset extends Model
     public function saveImage(AssetRequest $request)
     {
         if(! $request->file('image')) return null;
-        $uploadPath = '/images/assets/';
-
-        $imageName = $this->id . '.' . 
+        $baseDir = 'images/assets/';
+        $fileName = $this->id . '.' . 
             $request->file('image')->getClientOriginalExtension();
+        $filepath = $baseDir.$fileName;
 
-        $imagePath = base_path() . '/public' . $uploadPath;
-        $request->file('image')->move($imagePath, $imageName);
-        $this->update(
-            ['image' => $uploadPath.$imageName]
-        );
+        if($request->file('image')->move($baseDir, $fileName))
+        {
+            Image::make($filepath)
+            ->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save($filepath);
+
+            $this->update(
+                ['image' => '/'.$filepath]
+            );
+        }
     }
     /**
      * date_acquired attribute in yyyy-mm-dd format

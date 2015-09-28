@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Asset;
 use App\Floor;
-use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FloorsController extends Controller
 {
@@ -41,10 +42,11 @@ class FloorsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'department_id' => 'required'
+            'department_id' => 'required',
+            'image' => 'mimes:png,jpeg,jpg',
         ]);
 
-        (new Floor($request->all()))->save();
+        (new Floor($request->all()))->save()->saveImage();
 
         flash()->success('Success!', 'Floor created successfully');
 
@@ -59,7 +61,10 @@ class FloorsController extends Controller
      */
     public function show($id)
     {
-        //
+        $floor = Floor::findOrFail($id);
+        $assets = Asset::where('floor_id', $id)->get();
+
+        return View('floors.show', compact('floor', 'assets'));
     }
 
     /**
@@ -86,11 +91,13 @@ class FloorsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'department_id' => 'required'
+            'department_id' => 'required',
+            'image' => 'mimes:png,jpg,jpeg',
         ]);
 
         $floor = Floor::findOrFail($id);
         $floor->update($request->all());
+        $floor->saveImage($request);
         
         flash()->success('Success!', 'Floor updated successfully!');
         return redirect('floors');

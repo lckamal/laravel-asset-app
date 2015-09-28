@@ -17,8 +17,8 @@ Route::get('permissions/delete/{id}', 'PermissionsController@destroy');
 Route::resource('departments', 'DepartmentsController');
 Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 
-Route::resource('floors', 'FloorsController');
 Route::get('floors/delete/{id}', 'FloorsController@destroy');
+Route::resource('floors', 'FloorsController');
 
 Route::resource('assets/dropdown', 'AssetsController@dropdown');
 Route::resource('assets', 'AssetsController');

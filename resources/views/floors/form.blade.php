@@ -12,7 +12,7 @@
         @include('errors/validation')
 
         @if(isset($floor))
-            {!! Form::model($floor, array('action' => ['FloorsController@update', $floor->id])) !!} 
+            {!! Form::model($floor, array('action' => ['FloorsController@update', $floor->id], 'files' => true)) !!} 
             {!! Form::hidden('_method', 'PATCH') !!}
         @else
             {!! Form::open(array('url' => 'floors', 'enctype' => 'multipart/form-data')) !!}
@@ -26,6 +26,25 @@
                 <div class="form-group">
                     {!! Form::label('name', 'Name:') !!} <span class="text-danger">*</span>
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
+                </div>
+    
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            {!! Form::label('Image') !!} <small><span class="help-inline">(jpg,png)</span></small>
+                            {!! Form::file('image', ['class' => 'form-control']) !!}
+                            @if(isset($floor->image))
+                                <span class="help-block">
+                                    Existing image will be replaced if new image is selected.
+                                </span>
+                            @endif
+                        </div>
+                        <div class="col-sm-6">
+                            @if(isset($floor->image))
+                                <img src="{{ $floor->image }}" alt="" height="100" />
+                            @endif
+                        </div>
+                    </div>
                 </div>
 
                 <hr>
