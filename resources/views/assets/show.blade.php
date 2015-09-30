@@ -52,8 +52,8 @@
                                 <td>{{$asset->category->name}}</td>
                             </tr>
                             <tr>
-                                <td><b>Department</b></td>
-                                <td>{{$asset->department->name}} {{ isset($asset->floor->name) ? ', '.$asset->floor->name : ''}}</td>
+                                <td><b>Building</b></td>
+                                <td>{{$asset->building->name}} {{ isset($asset->floor->name) ? ', '.$asset->floor->name : ''}}</td>
                             </tr>
                             <tr>
                                 <td><b>Vendor</b></td>
