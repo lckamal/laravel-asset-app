@@ -5,9 +5,7 @@
 <div class="login-box">
     @include('errors/validation')
     <div class="login-logo">Login</div>
-        <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-        
+        <div class="login-box-body">        
         <form action="/auth/login" method="POST" role="form">
             {!! csrf_field() !!}
                 
@@ -32,9 +30,10 @@
                 <div class="col-xs-4">
                   <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div><!-- /.col -->
-              </div>
+            </div>
               
         </form>
+        <a href="{{ url('password/email') }}">I forgot my password</a>
     </div>
  </div>   
 

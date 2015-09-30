@@ -17,8 +17,8 @@ Route::get('permissions/delete/{id}', 'PermissionsController@destroy');
 Route::resource('departments', 'DepartmentsController');
 Route::get('departments/delete/{id}', 'DepartmentsController@destroy');
 
-Route::get('floors/delete/{id}', 'FloorsController@destroy');
 Route::resource('floors', 'FloorsController');
+Route::get('floors/delete/{id}', 'FloorsController@destroy');
 
 Route::resource('assets/dropdown', 'AssetsController@dropdown');
 Route::resource('assets', 'AssetsController');
@@ -41,7 +41,11 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-// Route::get('users', ['middleware' => 'acl:manage_users', function()
-// {
-//     return redirect('/home');
-// }]);
+
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');

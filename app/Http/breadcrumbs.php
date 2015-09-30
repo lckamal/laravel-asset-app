@@ -111,6 +111,16 @@ Breadcrumbs::register('floors.edit', function($breadcrumbs)
     $breadcrumbs->push('Edit Floor', route('floors.edit'));
 });
 
+// Home > Department > Floor > Detail
+Breadcrumbs::register('floors.show', function($breadcrumbs)
+{
+    $floor = \App\Floor::find(Request::segment(2));
+
+    $breadcrumbs->parent('departments.index');
+    $breadcrumbs->push($floor->department->name, url('floors?department_id='.$floor->department->id));
+    $breadcrumbs->push($floor->name);
+});
+
 // Home > Employees
 Breadcrumbs::register('employees.index', function($breadcrumbs)
 {

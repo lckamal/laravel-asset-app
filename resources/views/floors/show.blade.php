@@ -1,16 +1,16 @@
 @extends('layout')
 @section('content')
 <section class="content-header">
-  <h1>Floor {{ $floor->name ? '&raquo; ' . $floor->name : '' }}</h1>
-  {!! Breadcrumbs::render('floors.index') !!}
+  <h1>{{ $floor->name }}</h1>
+  {!! Breadcrumbs::render('floors.show') !!}
 </section>
 <section class="content">
     <div class="box">
         <div class="box-header with-border">
-          Department: {{ $floor->department->name }}
+            List of assets on the floor.
         </div>
         <div class="box-body table-responsive no-padding">
-            @if(count($assets))
+            @if(count($floor->assets))
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -21,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($assets as $asset)
+                    @foreach($floor->assets as $asset)
                         <tr>
                             <td>{{ $asset->id }}</td>
                             <td>{{ $asset->name }}</td>

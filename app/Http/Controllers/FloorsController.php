@@ -46,7 +46,9 @@ class FloorsController extends Controller
             'image' => 'mimes:png,jpeg,jpg',
         ]);
 
-        (new Floor($request->all()))->save()->saveImage();
+        $floor = new Floor($request->all());
+        $floor->save();
+        $floor->saveImage($request);
 
         flash()->success('Success!', 'Floor created successfully');
 
@@ -62,9 +64,8 @@ class FloorsController extends Controller
     public function show($id)
     {
         $floor = Floor::findOrFail($id);
-        $assets = Asset::where('floor_id', $id)->get();
 
-        return View('floors.show', compact('floor', 'assets'));
+        return View('floors.show', ['floor' => $floor]);
     }
 
     /**
