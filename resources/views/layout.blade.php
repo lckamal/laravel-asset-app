@@ -43,6 +43,9 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departments <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="/departments">Departments</a></li>
+                            @can('manage_buildings')
+                                <li><a href="/buildings">Buildings</a></li>
+                            @endcan
                             @can('manage_floors')
                                 <li><a href="/floors">Floors</a></li>
                             @endcan

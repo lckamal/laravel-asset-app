@@ -90,6 +90,27 @@ Breadcrumbs::register('departments.edit', function($breadcrumbs)
     $breadcrumbs->push('Edit Department', route('departments.edit'));
 });
 
+// Home > Buildings
+Breadcrumbs::register('buildings.index', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Buildings', route('buildings.index'));
+});
+
+// Home > Buildings > Create
+Breadcrumbs::register('buildings.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('buildings.index');
+    $breadcrumbs->push('Create Building', route('buildings.create'));
+});
+
+// Home > Buildings > Edit
+Breadcrumbs::register('buildings.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('buildings.index');
+    $breadcrumbs->push('Edit Building', route('buildings.edit'));
+});
+
 // Home > Floors
 Breadcrumbs::register('floors.index', function($breadcrumbs)
 {

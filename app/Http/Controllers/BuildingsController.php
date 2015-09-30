@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Department;
+use App\Building;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class DepartmentsController extends Controller
+class BuildingsController extends Controller
 {
     
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('permission:manage_departments');
+        $this->middleware('permission:manage_buildings');
         parent::__construct();
     }
 
@@ -25,10 +25,10 @@ class DepartmentsController extends Controller
      */
     public function index()
     {
-        $departments = Department::filter()->paginate(30);
+        $buildings = Building::filter()->paginate(30);
         $view = \Request::get('view', 'list');
-        $loadview = $view == 'map' ? 'departments.map' : 'departments.index';
-        return View($loadview, compact('departments'));
+        $loadview = $view == 'map' ? 'buildings.map' : 'buildings.index';
+        return View($loadview, compact('buildings'));
     }
 
     /**
@@ -38,8 +38,8 @@ class DepartmentsController extends Controller
      */
     public function create()
     {
-        $formTitle = 'Create department';
-        return View('departments.form', compact('formTitle'));
+        $formTitle = 'Create building';
+        return View('buildings.form', compact('formTitle'));
     }
 
     /**
@@ -51,14 +51,16 @@ class DepartmentsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:departments|max:255',
+            'name' => 'required|unique:buildings|max:255',
+            'latitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
+            'longitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
         ]);
 
-        (new Department($request->all()))->save();
+        (new Building($request->all()))->save();
 
-        flash()->success('Success!', 'Department created successfully');
+        flash()->success('Success!', 'Building created successfully');
 
-        return redirect('/departments');
+        return redirect('/buildings');
     }
 
     /**
@@ -80,9 +82,9 @@ class DepartmentsController extends Controller
      */
     public function edit($id)
     {
-        $department = Department::find($id);
-        $formTitle = 'Edit department';
-        return View('departments.form', compact('department', 'formTitle'));
+        $building = Building::find($id);
+        $formTitle = 'Edit building';
+        return View('buildings.form', compact('building', 'formTitle'));
     }
 
     /**
@@ -95,14 +97,16 @@ class DepartmentsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|unique:departments,id,'.$id.'|max:255',
+            'name' => 'required|unique:buildings,id,'.$id.'|max:255',
+            'latitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
+            'longitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
         ]);
 
-        $department = Department::findOrFail($id);
-        $department->update($request->all());
+        $building = Building::findOrFail($id);
+        $building->update($request->all());
         
-        flash()->success('Success!', 'Department updated successfully!');
-        return redirect('departments');
+        flash()->success('Success!', 'Building updated successfully!');
+        return redirect('buildings');
     }
 
     /**
@@ -113,8 +117,8 @@ class DepartmentsController extends Controller
      */
     public function destroy($id)
     {
-        Department::destroy($id);
-        flash()->success('Success!', 'Department has been deleted!');
-        return redirect('departments');
+        Building::destroy($id);
+        flash()->success('Success!', 'Building has been deleted!');
+        return redirect('buildings');
     }
 }

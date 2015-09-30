@@ -12,6 +12,7 @@ class AssetTableSeeder extends Seeder
     public function run()
     {
         DB::table('departments')->truncate();
+        DB::table('buildings')->truncate();
         DB::table('floors')->truncate();
         DB::table('categories')->truncate();
         DB::table('vendors')->truncate();
@@ -32,6 +33,11 @@ class AssetTableSeeder extends Seeder
         for($i = 0; $i < 20; $i++)
         {
             factory('App\Department')->create();
+        }
+        // create random 10 Buildings
+        for($i = 0; $i < 20; $i++)
+        {
+            factory('App\Building')->create();
         }
         // create random 20 Floors
         for($i = 0; $i < 50; $i++)

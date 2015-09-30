@@ -4,21 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Department extends Model
+class Building extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'departments';
+    protected $table = 'buildings';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['name','latitude','longitude'];
 
     /**
      * scope query with filter options
@@ -33,25 +33,5 @@ class Department extends Model
         }
 
         return $query;
-    }
-
-    /**
-     * Department has many floors
-     * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function floors()
-    {
-        return $this->hasMany('App\Floor');
-    }
-
-    /**
-     * Department has many assets
-     * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function assets()
-    {
-        return $this->hasMany('App\Asset');
     }
 }

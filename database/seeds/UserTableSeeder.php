@@ -53,6 +53,10 @@ class UserTableSeeder extends Seeder
                 'label' => 'Manage departments'
             ],
             [
+                'name' => 'manage_buildings',
+                'label' => 'Manage buildings'
+            ],
+            [
                 'name' => 'manage_employees',
                 'label' => 'Manage employees'
             ],

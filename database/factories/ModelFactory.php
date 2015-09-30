@@ -40,6 +40,12 @@ $factory->define(App\Role::class, function (Faker\Generator $faker) {
 $factory->define(App\Department::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->company,
+    ];
+});
+
+$factory->define(App\Building::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->company,
         'latitude' => $faker->latitude,
         'longitude' => $faker->longitude,
     ];

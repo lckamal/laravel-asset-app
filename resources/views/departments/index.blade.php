@@ -6,10 +6,12 @@
   {!! Breadcrumbs::render('departments.index') !!}
 </section>
 <section class="content">
-    @include('departments.tabs', ['active' => 'list'])
     <div class="box box-info">
         <div class="box-header with-border">
           @include('partials.filter', ['resetUrl' => '/departments'])
+          <div class="box-tools">
+            <a href="/departments/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Department</a>
+          </div>
         </div>
         <div class="box-body table-responsive no-padding">
             @if(count($departments))
@@ -18,7 +20,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>location</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -27,7 +28,6 @@
                         <tr>
                             <td>{{ $department->id }}</td>
                             <td>{{ $department->name }}</td>
-                            <td>{{ $department->latitude }}, {{ $department->longitude }}</td>
                             <td>
                                 <a href="/floors?department_id={{ $department->id }}" class="btn btn-primary btn-xs">Floors</a>
                                 <a href="/departments/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>

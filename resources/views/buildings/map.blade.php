@@ -2,11 +2,11 @@
 
 @section('content')
 <section class="content-header">
-  <h1>Departments</h1>
-  {!! Breadcrumbs::render('departments.index') !!}
+  <h1>Buildings</h1>
+  {!! Breadcrumbs::render('buildings.index') !!}
 </section>
 <section class="content">
-    @include('departments.tabs', ['active' => 'map'])
+    @include('buildings.tabs', ['active' => 'map'])
     <div class="box box-info">    
         <div id="map-canvas"></div>
     </div>
@@ -19,7 +19,7 @@
         var bounds = new google.maps.LatLngBounds();
         var infowindow = new google.maps.InfoWindow();    
 
-        @foreach($departments as $item)
+        @foreach($buildings as $item)
 
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng({{$item->latitude}},{{$item->longitude}}),
@@ -37,11 +37,11 @@
                       '<tr>' +
                           '<td>Floors:</td>' + 
                           '<td>{{ $item->floors()->count() }}</td>' +
-                          '<td><a class="btn btn-xs btn-link" href="/floors?department_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
+                          '<td><a class="btn btn-xs btn-link" href="/floors?building_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
                       '</tr><tr>' +
                         '<td>Assets:</td>' +
                         '<td>{{ $item->assets()->count() }}</td>' +
-                        '<td><a class="btn btn-xs btn-link" href="/assets?department_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
+                        '<td><a class="btn btn-xs btn-link" href="/assets?building_id={{$item->id}}"><i class="fa fa-eye"></i> View</a></td>' +
                       '</tr>' +
                     '</table>';
               infowindow.setContent(infoWindowContent);
