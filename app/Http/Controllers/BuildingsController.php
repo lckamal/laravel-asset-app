@@ -100,6 +100,9 @@ class BuildingsController extends Controller
             'name' => 'required|unique:buildings,id,'.$id.'|max:255',
             'latitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
             'longitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
+            
+            // 'latitude' => "regex:/^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/",
+            // 'longitude' => "regex:/^-?([1]?[1-7][1-9]|[1]?[1-8][0]|[1-9]?[0-9])\.{1}\d{1,6}$/",
         ]);
 
         $building = Building::findOrFail($id);

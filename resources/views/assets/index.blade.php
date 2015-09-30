@@ -19,7 +19,7 @@
                     <tr>
                         <th>Asset No.</th>
                         <th>Name</th>
-                        <th>Department</th>
+                        <th>Building</th>
                         <th>Floor</th>
                         <th>Status</th>
                         <th></th>
@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $asset->asset_no }}</td>
                             <td>{{ $asset->name }}</td>
-                            <td>{{ $asset->department->name }}</td>
+                            <td>{{ isset($asset->building->name) ? $asset->building->name : '' }}</td>
                             <td>{{ isset($asset->floor->name) ? $asset->floor->name : '' }}</td>
                             <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>

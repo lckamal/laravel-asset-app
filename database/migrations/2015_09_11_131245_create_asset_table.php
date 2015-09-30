@@ -14,7 +14,7 @@ class CreateAssetTable extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id')->unsigned();
+            $table->integer('building_id')->unsigned();
             $table->integer('floor_id')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->integer('category_id')->unsigned();

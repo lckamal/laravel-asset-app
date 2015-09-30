@@ -14,7 +14,7 @@ class CreateFloorsTable extends Migration
     {
         Schema::create('floors', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('department_id')->unsigned();
+            $table->integer('building_id')->unsigned();
             $table->string('name');
             $table->string('image')->nullable();
             $table->timestamps();

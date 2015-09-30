@@ -19,7 +19,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Department</th>
+                        <th>Building</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{ $floor->id }}</td>
                             <td>{{ $floor->name }}</td>
-                            <td>{{ $floor->department->name }}</td>
+                            <td>{{ isset($floor->building->name) ? $floor->building->name : '' }}</td>
                             <td>
                                 <a href="/floors/{{ $floor->id }}" class="btn btn-primary btn-xs">Assets</a>
                                 <a href="/floors/{{ $floor->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>

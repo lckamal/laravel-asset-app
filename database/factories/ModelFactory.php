@@ -29,7 +29,6 @@ $factory->define(App\Permission::class, function (Faker\Generator $faker) {
     ];
 });
 
-
 $factory->define(App\Role::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
@@ -88,13 +87,13 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Asset::class, function (Faker\Generator $faker) {
-    $department_id = App\Department::orderByRaw("RAND()")->first()->id;
-    $floor = App\Floor::where('department_id',$department_id)->orderByRaw("RAND()")->first();
+    $building_id = App\Department::orderByRaw("RAND()")->first()->id;
+    $floor = App\Floor::where('building_id',$building_id)->orderByRaw("RAND()")->first();
     $floor_id = isset($floor->id) ? $floor->id : 0;
     return [
         'name' => $faker->name,
         'asset_no' => $faker->randomNumber(4),
-        'department_id' => $department_id,
+        'building_id' => $building_id,
         'floor_id' => $floor_id,
         'category_id' => App\Category::orderByRaw("RAND()")->first()->id,
         'employee_id' => App\Employee::orderByRaw("RAND()")->first()->id,
@@ -115,7 +114,7 @@ $factory->define(App\Asset::class, function (Faker\Generator $faker) {
 $factory->define(App\Floor::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'department_id' => App\Department::orderByRaw("RAND()")->first()->id,
+        'building_id' => App\Building::orderByRaw("RAND()")->first()->id,
         'image' => NULL,
     ];
 });

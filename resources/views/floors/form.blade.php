@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-@inject('departments', 'App\Department')
+@inject('buildings', 'App\Building')
 <?php $floorcrumb = isset($floor) ? 'floors.edit' : 'floors.create'; ?>
 
 <section class="content-header">
@@ -19,8 +19,8 @@
         @endif
             <div class="box-body">
                 <div class="form-group">
-                    {!! Form::label('department_id', 'Department:') !!} <span class="text-danger">*</span>
-                    {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+                    {!! Form::label('building_id', 'Building:') !!} <span class="text-danger">*</span>
+                    {!! Form::select('building_id', array('' => 'Select Building') + (array)$buildings->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
                 </div>
 
                 <div class="form-group">

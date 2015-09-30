@@ -1,4 +1,4 @@
-@inject('departments', 'App\Department')
+@inject('buildings', 'App\Building')
 @inject('categories', 'App\Category')
 @inject('vendors', 'App\Vendor')
 
@@ -9,7 +9,7 @@
             {!! Form::text('q', Request::get('q'), ['class' => 'form-control', 'placeholder' => 'Search by Name, Asset no and Model..']) !!}
         </div>
         <div class="form-group">
-            {!! Form::select('department_id', array('' => 'Department') + (array)$departments->lists('name', 'id')->all(), Request::get('department_id'), ['class' => 'form-control chosen-input']) !!}
+            {!! Form::select('building_id', array('' => 'Building') + (array)$buildings->lists('name', 'id')->all(), Request::get('building_id'), ['class' => 'form-control chosen-input']) !!}
         </div>
         <div class="form-group">
             {!! Form::select('category_id', array('' => 'Category') + (array)$categories->lists('name', 'id')->all(), Request::get('category_id'), ['class' => 'form-control chosen-input']) !!}

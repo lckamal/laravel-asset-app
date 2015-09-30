@@ -33,7 +33,7 @@ class Asset extends Model
         'date_acquired',
         'date_disposed',
         'category_id',
-        'department_id',
+        'building_id',
         'floor_id',
         'vendor_id',
         'employee_id',
@@ -62,9 +62,9 @@ class Asset extends Model
             $query->where('category_id', '=', $category_id);
         }
         
-        if($department_id = \Request::get('department_id'))
+        if($building_id = \Request::get('building_id'))
         {
-            $query->where('department_id', '=', $department_id);
+            $query->where('building_id', '=', $building_id);
         }
         
         if($vendor_id = \Request::get('vendor_id'))
@@ -126,13 +126,13 @@ class Asset extends Model
     }
 
     /**
-     * Asset belongs to a department
+     * Asset belongs to a building
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function department()
+    public function building()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Building');
     }
 
     /**

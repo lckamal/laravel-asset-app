@@ -121,7 +121,7 @@ class AssetsController extends Controller
      */
     public function dropdown()
     {
-        $department_id = \Request::get('department_id');
-        return \App\Floor::where('department_id', $department_id)->lists('name','id');
+        $building_id = \Request::get('building_id');
+        return \App\Floor::where('building_id', $building_id)->lists('name','id');
     }
 }

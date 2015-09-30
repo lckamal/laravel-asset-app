@@ -42,7 +42,7 @@ class FloorsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'department_id' => 'required',
+            'building_id' => 'required',
             'image' => 'mimes:png,jpeg,jpg',
         ]);
 
@@ -92,7 +92,7 @@ class FloorsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
-            'department_id' => 'required',
+            'building_id' => 'required',
             'image' => 'mimes:png,jpg,jpeg',
         ]);
 

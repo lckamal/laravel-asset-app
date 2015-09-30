@@ -15,8 +15,6 @@ class CreateDepartmentTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->decimal('latitude',10,6)->nullable();
-            $table->decimal('longitude',10,6)->nullable();
             $table->timestamps();
         });
     }

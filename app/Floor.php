@@ -22,7 +22,7 @@ class Floor extends Model
      */
     protected $fillable = [
         'name',
-        'department_id',
+        'building_id',
         'image',
     ];
 
@@ -65,22 +65,22 @@ class Floor extends Model
             $query->where('name', 'like', "%{$name}%");
         }
 
-        if($department_id = \Request::get('department_id'))
+        if($building_id = \Request::get('building_id'))
         {
-            $query->where('department_id', '=', "{$department_id}");
+            $query->where('building_id', '=', "{$building_id}");
         }
 
         return $query;
     }
 
     /**
-     * Floor belongs to a department
+     * Floor belongs to a building
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function department()
+    public function building()
     {
-        return $this->belongsTo('App\Department');
+        return $this->belongsTo('App\Building');
     }
 
     /**

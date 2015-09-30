@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-@inject('departments', 'App\Department')
+@inject('buildings', 'App\Building')
 @inject('categories', 'App\Category')
 @inject('vendors', 'App\Vendor')
 @inject('employees', 'App\Employee')
@@ -87,8 +87,8 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('department_id', 'Department:') !!} <span class="text-danger">*</span>
-                {!! Form::select('department_id', array('' => 'Select Department') + (array)$departments->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+                {!! Form::label('building_id', 'Building:') !!} <span class="text-danger">*</span>
+                {!! Form::select('building_id', array('' => 'Select Building') + (array)$buildings->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
             </div>
 
             <div class="form-group">
@@ -144,8 +144,8 @@
 <script type="text/javascript">
     var selected_floor_id = {!! isset($asset->floor_id) ? $asset->floor_id : '' !!};
     jQuery(document).ready(function($){
-        $('[name="department_id"]').change(function(){
-            $.get("{{ url('assets/dropdown')}}", { department_id: $(this).val() }, function(data) {
+        $('[name="building_id"]').change(function(){
+            $.get("{{ url('assets/dropdown')}}", { building_id: $(this).val() }, function(data) {
                 var floor_id = $('[name="floor_id"]');
                 floor_id.empty();
                 floor_id.append("<option value=''>Select Floor</option>");
