@@ -44,14 +44,4 @@ class Department extends Model
     {
         return $this->hasMany('App\Floor');
     }
-
-    /**
-     * Department has many assets
-     * 
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function assets()
-    {
-        return $this->hasMany('App\Asset');
-    }
 }

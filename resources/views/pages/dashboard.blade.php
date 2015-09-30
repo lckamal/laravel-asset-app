@@ -108,13 +108,13 @@
             </div><!-- ./col -->
             @endcan
         </div><!-- /.row -->
-        @if(count($stats['departments_data'])>0)
+        @if(count($stats['buildings_data'])>0)
         <div class="row hidden-xs">
             <div class="col-md-12">
             <!-- BAR CHART -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h3 class="box-title">No. of assets per department</h3>
+                  <h3 class="box-title">No. of assets per building</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   </div>
@@ -130,18 +130,18 @@
             @section('scripts.footer')
             <script>
             $(function () {
-                var deptLabels = [];
-                var deptAssetCounts = [];
-                @foreach($stats['departments_data'] as $dept)
-                    deptLabels.push("{{$dept->name}}");
-                    deptAssetCounts.push({{$dept->assets()->count()}});
+                var buildingLabels = [];
+                var buildingAssetCounts = [];
+                @foreach($stats['buildings_data'] as $building)
+                    buildingLabels.push("{{$building->name}}");
+                    buildingAssetCounts.push({{$building->assets()->count()}});
                 @endforeach
                 /* ChartJS
                  * -------
                  * Here we will create a few charts using ChartJS
                  */
                  var areaChartData = {
-                  labels: deptLabels,
+                  labels: buildingLabels,
                   datasets: [
                     {
                       label: "Digital Goods",
@@ -151,7 +151,7 @@
                       pointStrokeColor: "rgba(60,141,188,1)",
                       pointHighlightFill: "#fff",
                       pointHighlightStroke: "rgba(60,141,188,1)",
-                      data: deptAssetCounts
+                      data: buildingAssetCounts
                     }
                   ]
                 };

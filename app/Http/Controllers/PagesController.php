@@ -32,7 +32,8 @@ class PagesController extends Controller
         $stats['categories'] = \App\Category::count();
         $stats['vendors'] = \App\Vendor::count();
         $stats['departments'] = \App\Department::count();
-        $stats['departments_data'] = \App\Department::all();
+        $stats['buildings'] = \App\Building::count();
+        $stats['buildings_data'] = \App\Building::all();
 
         return View('pages.dashboard', compact('stats'));
     }
