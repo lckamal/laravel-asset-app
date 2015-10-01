@@ -29,7 +29,6 @@
                             <td>{{ $department->id }}</td>
                             <td>{{ $department->name }}</td>
                             <td>
-                                <a href="/floors?department_id={{ $department->id }}" class="btn btn-primary btn-xs">Floors</a>
                                 <a href="/departments/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
                                 <a href="/departments/delete/{{ $department->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>

@@ -114,8 +114,16 @@ Breadcrumbs::register('buildings.edit', function($breadcrumbs)
 // Home > Floors
 Breadcrumbs::register('floors.index', function($breadcrumbs)
 {
-    $breadcrumbs->parent('home');
-    $breadcrumbs->push('Floors', route('floors.index'));
+    if($building_id = Request::get('building_id')){
+        $building = \App\Building::find($building_id);
+        
+        $breadcrumbs->parent('buildings.index');
+        $breadcrumbs->push($building->name, url('floors?building_id='.$building->id));
+    }
+    else{
+        $breadcrumbs->parent('home');
+        $breadcrumbs->push('Floors', route('floors.index'));
+    }
 });
 
 // Home > Floors > Create
@@ -137,8 +145,8 @@ Breadcrumbs::register('floors.show', function($breadcrumbs)
 {
     $floor = \App\Floor::find(Request::segment(2));
 
-    $breadcrumbs->parent('departments.index');
-    $breadcrumbs->push($floor->department->name, url('floors?department_id='.$floor->department->id));
+    $breadcrumbs->parent('buildings.index');
+    $breadcrumbs->push($floor->building->name, url('floors?building_id='.$floor->building->id));
     $breadcrumbs->push($floor->name);
 });
 
@@ -185,17 +193,14 @@ Breadcrumbs::register('assets.edit', function($breadcrumbs)
 });
 
 // Home > Assets > map
-Breadcrumbs::register('assets.map', function($breadcrumbs)
-{
-    $breadcrumbs->parent('assets.index');
-    $breadcrumbs->push('Map', route('assets.map'));
-});
-
-// Home > Assets > map
 Breadcrumbs::register('assets.show', function($breadcrumbs)
 {
-    $breadcrumbs->parent('assets.index');
-    $breadcrumbs->push('Detail', route('assets.show'));
+    $asset = \App\Asset::find(Request::segment(2));
+
+    $breadcrumbs->parent('buildings.index');
+    $breadcrumbs->push($asset->building->name, url('floors?building_id='.$asset->building->id));
+    $breadcrumbs->push($asset->floor->name, url('floors/'.$asset->floor->id));
+    $breadcrumbs->push($asset->name);
 });
 
 // Home > Categories
