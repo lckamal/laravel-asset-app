@@ -27,6 +27,7 @@
                             <td>{{ $asset->name }}</td>
                             <td>{{ $asset->model }}</td>
                             <td>
+                                <a href="/assets/{{ $asset->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i> Edit</a>
                                 <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View Detail</a>
                             </td>
                         </tr>

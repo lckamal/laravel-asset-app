@@ -44,4 +44,13 @@ class Building extends Model
     {
         return $this->hasMany('App\Asset');
     }
+
+    /**
+     * Building has many assets
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function floors(){
+        return $this->hasMany('App\Floor');
+    }
 }

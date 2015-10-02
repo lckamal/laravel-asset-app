@@ -174,8 +174,15 @@ Breadcrumbs::register('employees.edit', function($breadcrumbs)
 // Home > Assets
 Breadcrumbs::register('assets.index', function($breadcrumbs)
 {
-    $breadcrumbs->parent('home');
+    if($building_id = Request::get('building_id')){
+        $building = \App\Building::find($building_id);
+        $breadcrumbs->parent('buildings.index');
+        $breadcrumbs->push($building->name, url('floors?building_id='.$building_id));
+    }else{
+        $breadcrumbs->parent('home');
+    }
     $breadcrumbs->push('Assets', route('assets.index'));
+
 });
 
 // Home > Assets > Create

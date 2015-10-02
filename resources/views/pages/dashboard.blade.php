@@ -32,13 +32,13 @@
               </div>
             </div><!-- ./col -->
             @endcan
-            @can('manage_departments')
+            @can('manage_buildings')
             <div class="col-lg-2 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>{{ $stats['departments'] }}</h3>
-                  <p>Total departments</p>
+                  <h3>{{ $stats['buildings'] }}</h3>
+                  <p>Total buildings</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
