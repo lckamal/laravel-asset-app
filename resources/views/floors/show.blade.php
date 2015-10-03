@@ -15,21 +15,26 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Asset No.</th>
                         <th>Name</th>
-                        <th>Model</th>
+                        <th>Building</th>
+                        <th>Floor</th>
+                        <th>Status</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($floor->assets as $asset)
                         <tr>
-                            <td>{{ $asset->id }}</td>
+                            <td>{{ $asset->asset_no }}</td>
                             <td>{{ $asset->name }}</td>
-                            <td>{{ $asset->model }}</td>
+                            <td>{{ isset($asset->building->name) ? $asset->building->name : '' }}</td>
+                            <td>{{ isset($asset->floor->name) ? $asset->floor->name : '' }}</td>
+                            <td>{{ $asset->status ? 'Active' : 'Inactive' }}</td>
                             <td>
-                                <a href="/assets/{{ $asset->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-eye"></i> Edit</a>
-                                <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View Detail</a>
+                                <a href="/assets/{{ $asset->id }}" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> View</a>
+                                <a href="/assets/{{ $asset->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                <a href="/assets/delete/{{ $asset->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     @endforeach

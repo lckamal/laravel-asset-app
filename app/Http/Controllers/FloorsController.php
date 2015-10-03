@@ -64,7 +64,7 @@ class FloorsController extends Controller
     public function show($id)
     {
         $floor = Floor::findOrFail($id);
-        $view = \Request::get('view', 'list');
+        $view = \Request::get('view', 'map');
         $loadview = $view == 'map' ? 'floors.map' : 'floors.show';
 
         return View($loadview, ['floor' => $floor]);
