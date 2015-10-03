@@ -5,7 +5,8 @@
   {!! Breadcrumbs::render('floors.show') !!}
 </section>
 <section class="content">
-    <div class="box">
+    @include('floors.partials.tabs', ['active' => 'list'])
+    <div class="box box-info">
         <div class="box-header with-border">
             List of assets on the floor.
         </div>

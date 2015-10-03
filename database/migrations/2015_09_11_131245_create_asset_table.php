@@ -29,6 +29,8 @@ class CreateAssetTable extends Migration
             $table->date('date_disposed')->nullable();
             $table->float('purchase_price');
             $table->string('image')->nullable();
+            $table->decimal('position_top',10,6)->nullable();
+            $table->decimal('position_left',10,6)->nullable();
             $table->enum('status', ['active', 'inactive', 'repair']);
             $table->timestamps();
             

@@ -73,6 +73,24 @@ class AssetsController extends Controller
     }
 
     /**
+     * update position of asset on floor map
+     * @param  Request $request
+     * @return status
+     */
+    public function update_position(Request $request)
+    {
+        $asset = Asset::findOrFail($request->get('id'));
+        if(!$asset){
+            return 0;
+        }
+
+        $asset->position_top = $request->get('position_top');
+        $asset->position_left = $request->get('position_left');
+        $asset->save();
+        return 1;
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

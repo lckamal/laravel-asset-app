@@ -23,7 +23,8 @@ Route::get('buildings/delete/{id}', 'BuildingsController@destroy');
 Route::resource('floors', 'FloorsController');
 Route::get('floors/delete/{id}', 'FloorsController@destroy');
 
-Route::resource('assets/dropdown', 'AssetsController@dropdown');
+Route::get('assets/dropdown', 'AssetsController@dropdown');
+Route::post('assets/update_position', 'AssetsController@update_position');
 Route::resource('assets', 'AssetsController');
 Route::get('assets/delete/{id}', 'AssetsController@destroy');
 

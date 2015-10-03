@@ -15,6 +15,7 @@ elixir(function(mix) {
     mix.sass('app.scss')
     	.scripts([
             'libs/jquery.min.js',
+            './resources/assets/plugins/jQueryUI/jquery-ui.min.js',
             'libs/bootstrap.min.js',
             'adminlte/app.min.js',
             './resources/assets/plugins/input-mask/jquery.inputmask.js',
