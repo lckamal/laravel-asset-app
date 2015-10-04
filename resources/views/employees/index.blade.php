@@ -13,7 +13,7 @@
             <a href="/employees/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Employee</a>
           </div>
         </div>
-        <div class="box-body table-responsive">
+        <div class="box-body table-responsive no-padding">
             @if(count($employees))
             <table class="table table-striped table-hover">
                 <thead>

@@ -144,10 +144,15 @@ Breadcrumbs::register('floors.edit', function($breadcrumbs)
 Breadcrumbs::register('floors.show', function($breadcrumbs)
 {
     $floor = \App\Floor::find(Request::segment(2));
-
     $breadcrumbs->parent('buildings.index');
-    $breadcrumbs->push($floor->building->name, url('floors?building_id='.$floor->building->id));
-    $breadcrumbs->push($floor->name);
+    if(isset($floor->building)){
+        $breadcrumbs->push($floor->building->name, url('floors?building_id='.$floor->building->id));
+        $breadcrumbs->push($floor->name);
+    }
+    else{
+        $breadcrumbs->push('Assets');
+    }
+    
 });
 
 // Home > Employees
