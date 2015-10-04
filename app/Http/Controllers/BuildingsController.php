@@ -26,9 +26,10 @@ class BuildingsController extends Controller
     public function index()
     {
         $buildings = Building::filter()->paginate(30);
+        $page_start = ( \Request::get('page', 1) - 1 )* 30;
         $view = \Request::get('view', 'list');
         $loadview = $view == 'map' ? 'buildings.map' : 'buildings.index';
-        return View($loadview, compact('buildings'));
+        return View($loadview, compact('buildings', 'page_start'));
     }
 
     /**
@@ -52,8 +53,8 @@ class BuildingsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:buildings|max:255',
-            'latitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
-            'longitude' => 'regex:/^[+-]?\d+\.\d+, ?[+-]?\d+\.\d+$/',
+            'latitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
+            'longitude' => 'regex:/-?\d{1,3}\.{1}\d{1,6}/',
         ]);
 
         (new Building($request->all()))->save();

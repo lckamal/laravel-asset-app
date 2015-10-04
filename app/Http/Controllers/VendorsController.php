@@ -26,7 +26,8 @@ class VendorsController extends Controller
     public function index()
     {
         $vendors = Vendor::filter()->paginate(30);
-        return View('vendors.index', compact('vendors'));
+        $page_start = ( \Request::get('page', 1) - 1 )* 30;
+        return View('vendors.index', compact('vendors', 'page_start'));
     }
 
     /**

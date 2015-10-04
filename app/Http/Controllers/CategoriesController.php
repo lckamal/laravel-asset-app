@@ -26,7 +26,8 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::filter()->paginate(30);
-        return View('categories.index', compact('categories'));
+        $page_start = ( \Request::get('page', 1) - 1 )* 30;
+        return View('categories.index', compact('categories', 'page_start'));
     }
 
     /**

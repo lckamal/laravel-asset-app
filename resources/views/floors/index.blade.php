@@ -14,16 +14,16 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th>Building</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($floors as $floor)
+                    @foreach($floors as $key => $floor)
                         <tr>
-                            <td>{{ $floor->id }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
                             <td>{{ $floor->name }}</td>
                             <td>{{ isset($floor->building->name) ? $floor->building->name : '' }}</td>
                             <td>

@@ -142,7 +142,8 @@
 @stop
 @section('scripts.footer')
 <script type="text/javascript">
-    var selected_floor_id = {!! isset($asset->floor_id) ? $asset->floor_id : '' !!};
+    var selected_floor_id = {!! isset($asset->floor_id) ? $asset->floor_id : '0' !!};
+
     jQuery(document).ready(function($){
         $('[name="building_id"]').change(function(){
             $.get("{{ url('assets/dropdown')}}", { building_id: $(this).val() }, function(data) {

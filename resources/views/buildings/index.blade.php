@@ -16,7 +16,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th>location</th>
                         <th>location</th>
@@ -24,9 +24,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($buildings as $building)
+                    @foreach($buildings as $key => $building)
                         <tr>
-                            <td>{{ $building->id }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
                             <td>{{ $building->name }}</td>
                             <td>{{ $building->latitude }}, {{ $building->longitude }}</td>
                             <td>

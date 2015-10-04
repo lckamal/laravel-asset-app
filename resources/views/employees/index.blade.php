@@ -18,7 +18,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Number</th>
@@ -27,9 +27,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($employees as $employee)
+                    @foreach($employees as $key => $employee)
                         <tr>
-                            <td>{{ $employee->id }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
                             <td>{{ $employee->first_name . ' ' . $employee->last_name }}</td>
                             <td>{{ $employee->email }}</td>
                             <td>{{ $employee->mobile }}</td>

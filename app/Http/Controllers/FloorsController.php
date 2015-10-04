@@ -10,6 +10,13 @@ use App\Http\Controllers\Controller;
 
 class FloorsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:manage_floors');
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +25,8 @@ class FloorsController extends Controller
     public function index()
     {
         $floors = Floor::filter()->paginate(30);
-        return View('floors.index', compact('floors'));
+        $page_start = ( \Request::get('page', 1) - 1 )* 30;
+        return View('floors.index', compact('floors', 'page_start'));
     }
 
     /**

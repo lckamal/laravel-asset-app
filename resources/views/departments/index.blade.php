@@ -18,15 +18,15 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($departments as $department)
+                    @foreach($departments as $key => $department)
                         <tr>
-                            <td>{{ $department->id }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
                             <td>{{ $department->name }}</td>
                             <td>
                                 <a href="/departments/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>

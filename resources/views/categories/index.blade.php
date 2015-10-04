@@ -18,16 +18,16 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th style="min-width:150px"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($categories as $category)
+                    @foreach($categories as $key => $category)
                         <tr>
-                            <td>{{ $category->id }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
                             <td>

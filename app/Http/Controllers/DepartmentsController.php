@@ -26,9 +26,10 @@ class DepartmentsController extends Controller
     public function index()
     {
         $departments = Department::filter()->paginate(30);
+        $page_start = \Request::get('page', 0);
         $view = \Request::get('view', 'list');
         $loadview = $view == 'map' ? 'departments.map' : 'departments.index';
-        return View($loadview, compact('departments'));
+        return View($loadview, compact('departments', 'page_start'));
     }
 
     /**

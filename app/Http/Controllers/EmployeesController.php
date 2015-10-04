@@ -26,7 +26,8 @@ class EmployeesController extends Controller
     public function index()
     {
         $employees = Employee::filter()->paginate(30);
-        return View('employees.index', compact('employees'));
+        $page_start = ( \Request::get('page', 1) - 1 )* 30;
+        return View('employees.index', compact('employees', 'page_start'));
     }
 
     /**

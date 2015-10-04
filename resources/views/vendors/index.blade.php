@@ -18,19 +18,19 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>SN</th>
                         <th>Name</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($vendors as $department)
+                    @foreach($vendors as $key => $vendor)
                         <tr>
-                            <td>{{ $department->id }}</td>
-                            <td>{{ $department->name }}</td>
+                            <td>{{ $page_start + $key + 1 }}</td>
+                            <td>{{ $vendor->name }}</td>
                             <td>
-                                <a href="/vendors/{{ $department->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-                                <a href="/vendors/delete/{{ $department->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
+                                <a href="/vendors/{{ $vendor->id }}/edit" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+                                <a href="/vendors/delete/{{ $vendor->id }}" class="btn btn-danger btn-xs confirm"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                     @endforeach
