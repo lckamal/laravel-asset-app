@@ -4,7 +4,7 @@
     
 @inject('countries', 'App\Http\Utilities\country')
 @inject('timezone', 'App\Http\Utilities\timezone')
-@inject('usstate', 'App\Http\Utilities\usstate')
+@inject('state', 'App\Http\Utilities\state')
 @inject('roles', 'App\Role')
 
 <?php $employeecrumb = isset($employee) ? 'employees.edit' : 'employees.create'; ?>
@@ -132,7 +132,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             {!! Form::label('state', 'State:') !!}
-                            {!! Form::select('state', array('' => 'Non-US') + (array)$usstate::all(), null, ['class' => 'form-control chosen-input']) !!}
+                            {!! Form::select('state', array('' => 'Non-Australia') + (array)$state::get('au'), null, ['class' => 'form-control chosen-input']) !!}
                         </div>
                     </div>
 

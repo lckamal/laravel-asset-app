@@ -39,7 +39,7 @@ class EmployeeRequest extends Request
             'zip_code'  => 'required|max:8',
             'phone'  => '',
             'mobile'  => 'required|max:20|'.$mobile_validation,
-            'marital_status'  => 'required',
+            // 'marital_status'  => 'required',
             'dob'  => 'required',
             'ssn'  => 'required|max:11',
             'timezone'  => 'required',
