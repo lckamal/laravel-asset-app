@@ -8,6 +8,9 @@
     <div class="box">
         <div class="box-header with-border">
           @include('floors.partials.filter', ['resetUrl' => '/floors'])
+        <div class="box-tools">
+            <a href="/floors/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Floor</a>
+        </div>
         </div>
         <div class="box-body table-responsive no-padding">
             @if(count($floors))

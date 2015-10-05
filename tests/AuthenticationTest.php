@@ -16,7 +16,7 @@ class AuthenticationTest extends TestCase
     public function test_login_form()
     {
         $this->visit('/auth/login')
-            ->submitForm('Sign In', ['email' => 'admin@admin.com', 'password' => 'password'])
+            ->submitForm('Sign In', ['email' => 'sadmin@admin.com', 'password' => 'password'])
             ->see('Welcome!')
             ->onPage('home');
     }

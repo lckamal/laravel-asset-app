@@ -87,7 +87,7 @@ $factory->define(App\Employee::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Asset::class, function (Faker\Generator $faker) {
-    $building_id = App\Department::orderByRaw("RAND()")->first()->id;
+    $building_id = App\Building::orderByRaw("RAND()")->first()->id;
     $floor = App\Floor::where('building_id',$building_id)->orderByRaw("RAND()")->first();
     $floor_id = isset($floor->id) ? $floor->id : 0;
     return [
