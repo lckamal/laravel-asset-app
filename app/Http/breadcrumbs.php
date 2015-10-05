@@ -116,7 +116,6 @@ Breadcrumbs::register('floors.index', function($breadcrumbs)
 {
     if($building_id = Request::get('building_id')){
         $building = \App\Building::find($building_id);
-        
         $breadcrumbs->parent('buildings.index');
         $breadcrumbs->push($building->name, url('floors?building_id='.$building->id));
     }

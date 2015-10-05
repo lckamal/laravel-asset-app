@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class FloorsController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -26,6 +27,7 @@ class FloorsController extends Controller
     {
         $floors = Floor::filter()->paginate(30);
         $page_start = ( \Request::get('page', 1) - 1 )* 30;
+        
         return View('floors.index', compact('floors', 'page_start'));
     }
 
@@ -37,7 +39,8 @@ class FloorsController extends Controller
     public function create()
     {
         $formTitle = 'Create Floor';
-        return View('floors.form', compact('formTitle'));
+
+        return View('floors.form', compact('floors', 'formTitle'));
     }
 
     /**
@@ -60,7 +63,7 @@ class FloorsController extends Controller
 
         flash()->success('Success!', 'Floor created successfully');
 
-        return redirect('/floors');
+        return redirect('/floors?building_id='.$floor->building_id);
     }
 
     /**
@@ -111,7 +114,7 @@ class FloorsController extends Controller
         $floor->saveImage($request);
         
         flash()->success('Success!', 'Floor updated successfully!');
-        return redirect('floors');
+        return redirect('/floors?building_id='.$floor->building_id);
     }
 
     /**

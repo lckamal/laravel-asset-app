@@ -1,7 +1,10 @@
 @extends('layout')
 @section('content')
 @inject('buildings', 'App\Building')
-<?php $floorcrumb = isset($floor) ? 'floors.edit' : 'floors.create'; ?>
+<?php 
+$floorcrumb = isset($floor) ? 'floors.edit' : 'floors.create'; 
+$building_id = Request::get('building_id');
+?>
 
 <section class="content-header">
   <h1>{{ $formTitle }}</h1>
@@ -20,7 +23,7 @@
             <div class="box-body">
                 <div class="form-group">
                     {!! Form::label('building_id', 'Building:') !!} <span class="text-danger">*</span>
-                    {!! Form::select('building_id', array('' => 'Select Building') + (array)$buildings->lists('name', 'id')->all(), null, ['class' => 'form-control chosen-input']) !!}
+                    {!! Form::select('building_id', array('' => 'Select Building') + (array)$buildings->lists('name', 'id')->all(), $building_id, ['class' => 'form-control chosen-input']) !!}
                 </div>
 
                 <div class="form-group">
@@ -50,7 +53,7 @@
                 <hr>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Save</button>
-                    <a href="/floors" class="btn btn-default">Cancel</a>
+                    <a href="/floors?building_id={{ $building_id }}" class="btn btn-default">Cancel</a>
                 </div>
             </div>
         {!! Form::close() !!}

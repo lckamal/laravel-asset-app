@@ -1,5 +1,11 @@
 @extends('layout')
 @section('content')
+<?php 
+$create_url = '/floors/create';
+if(($building_id = Request::get('building_id')) > 0){
+    $create_url .= '?building_id='.$building_id;
+}
+?>
 <section class="content-header">
   <h1>Floors</h1>
   {!! Breadcrumbs::render('floors.index') !!}
@@ -9,7 +15,7 @@
         <div class="box-header with-border">
           @include('floors.partials.filter', ['resetUrl' => '/floors'])
         <div class="box-tools">
-            <a href="/floors/create" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Floor</a>
+            <a href="{{ $create_url }}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Add Floor</a>
         </div>
         </div>
         <div class="box-body table-responsive no-padding">
