@@ -52,6 +52,7 @@
         display:block;
         width:100%;
         background:#eee;
+        border:2px solid #ccc;
     }
     .floor-image{
         min-width:100%;
